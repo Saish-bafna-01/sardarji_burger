@@ -6,12 +6,15 @@ import Blog from './pages/Blog'
 import BlogDetail from './pages/BlogDetail'
 import Contact from './pages/Contact'
 import Checkout from './pages/Checkout'
+import NotFound from './pages/NotFound'
 import CartSidebar from './components/CartSidebar'
+import FloatingCartIcon from './components/FloatingCartIcon'
 
 function App() {
   return (
     <>
       <CartSidebar />
+      <FloatingCartIcon />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -20,6 +23,7 @@ function App() {
         <Route path='/blog/:slug' element={<BlogDetail />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/checkout' element={<Checkout />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   )

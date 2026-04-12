@@ -17,7 +17,7 @@ export const contactSectionData = {
       id: "location",
       icon: "map",
       title: "Location",
-      detail: "Edmonton, Alberta, Canada",
+      detail: "2382 23 Ave NW, Edmonton, AB T6T 0R1",
     },
     {
       id: "email",
@@ -39,10 +39,11 @@ export const contactSectionData = {
     },
   ],
   socialLinks: [
-    { name: "Facebook", href: "#" },
-    { name: "Instagram", href: "#" },
-    { name: "TikTok", href: "#" },
-    { name: "YouTube", href: "#" },
+    { name: "Facebook", href: "https://www.facebook.com/people/Sardar-Ji-Fast-Food/61583740583407" },
+    { name: "Instagram", href: "https://www.instagram.com/sardarji_fastfood_mudpot/" },
+    { name: "TikTok", href: "https://www.tiktok.com/@sardarji.fast.food" },
+    { name: "Pinterest", href: "https://ca.pinterest.com/sardarjifastfood/" },
+    { name: "YouTube", href: "https://www.youtube.com/@SardarJiFastFoodMudpot" },
   ],
   formHeading: "Your Details",
   formFields: [

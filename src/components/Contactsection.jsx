@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaPinterest } from "react-icons/fa";
 import { TbMap2, TbPhone, TbSend, TbClock } from "react-icons/tb";
 
 const iconMap = {
@@ -14,6 +14,7 @@ const socialIconMap = {
   Instagram: <FaInstagram size={20} />,
   TikTok: <FaTiktok size={20} />,
   YouTube: <FaYoutube size={20} />,
+  Pinterest: <FaPinterest size={20} />,
 };
 
 export default function ContactSection({
@@ -40,17 +41,18 @@ export default function ContactSection({
   };
 
   const defaultContactInfo = [
-    { id: "location", icon: "map", title: "Location", detail: "Edmonton, Alberta, Canada" },
+    { id: "location", icon: "map", title: "Location", detail: "2382 23 Ave NW, Edmonton, AB T6T 0R1" },
     { id: "email", icon: "email", title: "Email", detail: "info@sardarjifastfood.com" },
     { id: "phone", icon: "phone", title: "Phone", detail: "(825) 965-7973" },
     { id: "hours", icon: "clock", title: "Opening Hours", detail: "24/7 - We are always open to serve you!" },
   ];
 
   const defaultSocialLinks = [
-    { name: "Facebook", href: "#" },
-    { name: "Instagram", href: "#" },
-    { name: "TikTok", href: "#" },
-    { name: "YouTube", href: "#" },
+    { name: "Facebook", href: "https://www.facebook.com/people/Sardar-Ji-Fast-Food/61583740583407" },
+    { name: "Instagram", href: "https://www.instagram.com/sardarji_fastfood_mudpot/" },
+    { name: "TikTok", href: "https://www.tiktok.com/@sardarji.fast.food" },
+    { name: "Pinterest", href: "https://ca.pinterest.com/sardarjifastfood/" },
+    { name: "YouTube", href: "https://www.youtube.com/@SardarJiFastFoodMudpot" },
   ];
 
   const defaultFormFields = [

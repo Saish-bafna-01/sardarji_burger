@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FiMinus, FiPlus, FiTrash2, FiShoppingBag, FiUser, FiPhone, FiMapPin, FiMail, FiClock, FiCheck } from "react-icons/fi";
-import { FaStore, FaTruck } from "react-icons/fa";
+import { FiMinus, FiPlus, FiShoppingBag, FiUser, FiPhone, FiMapPin, FiMail, FiClock, FiCheck, FiCalendar, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FaStore, FaTruck, FaShoppingBag } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useCart } from "../context/CartContext";
@@ -9,26 +9,26 @@ import { footerData } from "../data/homeData";
 
 const orderTypes = [
   {
+    id: 'takeout',
+    title: 'Takeout',
+    description: 'Pick up your order at our restaurant',
+    icon: FaShoppingBag,
+    fee: 0,
+  },
+  {
+    id: 'delivery',
+    title: 'Delivery',
+    description: 'Get your food delivered to your doorstep',
+    icon: FaTruck,
+    fee: 4.99,
+  },
+  {
     id: 'dine-in',
     title: 'Dine In',
     description: 'Enjoy your meal at our restaurant',
     icon: FaStore,
+    fee: 0,
   },
-  {
-    id: 'takeout',
-    title: 'Takeout / Delivery',
-    description: 'Get your food delivered to your doorstep',
-    icon: FaTruck,
-  },
-];
-
-const timeSlots = [
-  'ASAP (15-20 min)',
-  '30 Minutes',
-  '45 Minutes',
-  '1 Hour',
-  '1.5 Hours',
-  '2 Hours',
 ];
 
 const paymentMethods = [
@@ -36,13 +36,28 @@ const paymentMethods = [
   { id: 'card', title: 'Credit/Debit Card' },
 ];
 
+// Generate time slots from 10 AM to 10 PM
+const generateTimeSlots = () => {
+  const slots = [];
+  for (let hour = 10; hour <= 22; hour++) {
+    const hourStr = hour > 12 ? hour - 12 : hour;
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    slots.push(`${hourStr}:00 ${ampm}`);
+    if (hour < 22) {
+      slots.push(`${hourStr}:30 ${ampm}`);
+    }
+  }
+  return slots;
+};
+
+const timeSlots = generateTimeSlots();
+
 export default function Checkout() {
   const { cartItems, updateQuantity, removeFromCart, getCartTotal, clearCart } = useCart();
   const navigate = useNavigate();
 
   const [step, setStep] = useState(1); // 1: Order Type, 2: Customer Info, 3: Payment
   const [orderType, setOrderType] = useState(null);
-  const [selectedTime, setSelectedTime] = useState(timeSlots[0]);
   const [paymentMethod, setPaymentMethod] = useState('cash');
   const [formData, setFormData] = useState({
     name: '',
@@ -57,10 +72,64 @@ export default function Checkout() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
 
+  // Calendar and Time state
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedTime, setSelectedTime] = useState('');
+  const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [showTimePicker, setShowTimePicker] = useState(false);
+
   const total = getCartTotal();
   const tax = total * 0.05; // 5% tax
-  const deliveryFee = orderType === 'takeout' ? 3.99 : 0;
+  const selectedOrderTypeData = orderTypes.find(t => t.id === orderType);
+  const deliveryFee = selectedOrderTypeData?.fee || 0;
   const grandTotal = total + tax + deliveryFee;
+
+  // Calendar functions
+  const getDaysInMonth = (date) => {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const firstDayOfMonth = new Date(year, month, 1).getDay();
+    return { daysInMonth, firstDayOfMonth };
+  };
+
+  const formatDate = (date) => {
+    const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  };
+
+  const isSameDay = (date1, date2) => {
+    return date1.getDate() === date2.getDate() &&
+      date1.getMonth() === date2.getMonth() &&
+      date1.getFullYear() === date2.getFullYear();
+  };
+
+  const isToday = (date) => {
+    return isSameDay(date, new Date());
+  };
+
+  const isPastDate = (date) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return date < today;
+  };
+
+  const handlePrevMonth = () => {
+    setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1));
+  };
+
+  const handleNextMonth = () => {
+    setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1));
+  };
+
+  const handleDateSelect = (day) => {
+    const newDate = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
+    if (!isPastDate(newDate)) {
+      setSelectedDate(newDate);
+      setShowCalendar(false);
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -74,10 +143,11 @@ export default function Checkout() {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-    if (orderType === 'takeout') {
+    if (orderType === 'delivery') {
       if (!formData.address.trim()) newErrors.address = 'Address is required';
       if (!formData.city.trim()) newErrors.city = 'City is required';
     }
+    if (!selectedTime) newErrors.time = 'Please select a time';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -100,6 +170,7 @@ export default function Checkout() {
     setTimeout(() => {
       setIsSubmitting(false);
       setOrderPlaced(true);
+      clearCart(); // Clear cart after successful order
     }, 2000);
   };
 
@@ -139,15 +210,21 @@ export default function Checkout() {
             </div>
             <h1 className="text-white text-2xl sm:text-3xl font-bold mb-4">Order Placed Successfully!</h1>
             <p className="text-white/70 mb-2">Thank you, {formData.name}!</p>
-            <p className="text-white/70 mb-6">
-              Your order has been received. {orderType === 'dine-in' ? 'Please arrive at the restaurant.' : 'We will deliver your food shortly.'}
+            <p className="text-white/70 mb-4">
+              Your order has been received and scheduled for:
             </p>
-            {orderType === 'dine-in' && (
-              <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-4 mb-6">
-                <p className="text-yellow-500 font-semibold">Your Order Number</p>
-                <p className="text-white text-4xl font-bold">#{Math.floor(Math.random() * 100) + 100}</p>
-              </div>
-            )}
+            <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-4 mb-6 inline-block">
+              <p className="text-yellow-500 font-semibold">
+                {formatDate(selectedDate)} at {selectedTime}
+              </p>
+              <p className="text-white/70 text-sm mt-1">
+                {orderType === 'dine-in' ? 'Dine In' : orderType === 'delivery' ? 'Delivery' : 'Takeout'}
+              </p>
+            </div>
+            <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-4 mb-6">
+              <p className="text-yellow-500 font-semibold">Your Order Number</p>
+              <p className="text-white text-4xl font-bold">#{Math.floor(Math.random() * 100) + 100}</p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleNewOrder}
@@ -168,6 +245,10 @@ export default function Checkout() {
       </div>
     );
   }
+
+  const { daysInMonth, firstDayOfMonth } = getDaysInMonth(currentMonth);
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   return (
     <div className="min-h-screen bg-[#111111]">
@@ -215,7 +296,7 @@ export default function Checkout() {
                   How would you like to order?
                 </h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                   {orderTypes.map((type) => (
                     <button
                       key={type.id}
@@ -233,7 +314,10 @@ export default function Checkout() {
                       <h3 className={`text-lg font-bold mb-2 ${orderType === type.id ? 'text-yellow-500' : 'text-white'}`}>
                         {type.title}
                       </h3>
-                      <p className="text-white/50 text-sm">{type.description}</p>
+                      <p className="text-white/50 text-sm mb-2">{type.description}</p>
+                      {type.fee > 0 && (
+                        <p className="text-yellow-500/70 text-xs">+${type.fee.toFixed(2)} delivery fee</p>
+                      )}
                     </button>
                   ))}
                 </div>
@@ -241,29 +325,6 @@ export default function Checkout() {
                 {errors.orderType && (
                   <p className="text-red-500 text-sm mb-4">{errors.orderType}</p>
                 )}
-
-                {/* Time Selection */}
-                <div className="mb-6">
-                  <label className="text-white font-semibold mb-3 block flex items-center gap-2">
-                    <FiClock className="text-yellow-500" />
-                    Pickup/Delivery Time
-                  </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                    {timeSlots.map((time) => (
-                      <button
-                        key={time}
-                        onClick={() => setSelectedTime(time)}
-                        className={`px-4 py-3 rounded-lg text-sm transition-all ${
-                          selectedTime === time
-                            ? 'bg-yellow-500 text-black font-semibold'
-                            : 'bg-white/10 text-white hover:bg-white/20'
-                        }`}
-                      >
-                        {time}
-                      </button>
-                    ))}
-                  </div>
-                </div>
 
                 <button
                   onClick={handleNextStep}
@@ -337,8 +398,8 @@ export default function Checkout() {
                     />
                   </div>
 
-                  {/* Address Fields (for takeout) */}
-                  {orderType === 'takeout' && (
+                  {/* Address Fields (for delivery only) */}
+                  {orderType === 'delivery' && (
                     <>
                       <div>
                         <label className="text-white font-semibold mb-2 block flex items-center gap-2">
@@ -387,6 +448,139 @@ export default function Checkout() {
                       </div>
                     </>
                   )}
+
+                  {/* Schedule Section */}
+                  <div className="border-t border-white/10 pt-4 mt-4">
+                    <h3 className="text-white font-bold mb-4 flex items-center gap-2">
+                      <FiClock className="text-yellow-500" />
+                      Schedule Your Order
+                    </h3>
+
+                    {/* Date Picker */}
+                    <div className="mb-4">
+                      <label className="text-white/70 text-sm mb-2 block">Select Date</label>
+                      <div className="relative">
+                        <button
+                          onClick={() => setShowCalendar(!showCalendar)}
+                          className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-yellow-500 outline-none transition-colors text-left flex items-center justify-between"
+                        >
+                          <span className="flex items-center gap-2">
+                            <FiCalendar className="text-yellow-500" />
+                            {formatDate(selectedDate)}
+                          </span>
+                          <span className="text-yellow-500">Change</span>
+                        </button>
+
+                        {showCalendar && (
+                          <div className="absolute z-20 top-full left-0 mt-2 bg-[#1c1c1c] rounded-xl border border-white/10 p-4 w-full sm:w-80 shadow-xl">
+                            {/* Calendar Header */}
+                            <div className="flex items-center justify-between mb-4">
+                              <button
+                                onClick={handlePrevMonth}
+                                className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                              >
+                                <FiChevronLeft className="text-white" />
+                              </button>
+                              <span className="text-white font-semibold">
+                                {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
+                              </span>
+                              <button
+                                onClick={handleNextMonth}
+                                className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                              >
+                                <FiChevronRight className="text-white" />
+                              </button>
+                            </div>
+
+                            {/* Day Names */}
+                            <div className="grid grid-cols-7 gap-1 mb-2">
+                              {dayNames.map((day) => (
+                                <div key={day} className="text-white/50 text-xs text-center py-2">
+                                  {day}
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Calendar Days */}
+                            <div className="grid grid-cols-7 gap-1">
+                              {/* Empty cells for days before the first day of month */}
+                              {Array.from({ length: firstDayOfMonth }).map((_, index) => (
+                                <div key={`empty-${index}`} className="h-10" />
+                              ))}
+                              {/* Days of the month */}
+                              {Array.from({ length: daysInMonth }).map((_, index) => {
+                                const day = index + 1;
+                                const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
+                                const isSelected = isSameDay(date, selectedDate);
+                                const isTodayDate = isToday(date);
+                                const isPast = isPastDate(date);
+
+                                return (
+                                  <button
+                                    key={day}
+                                    onClick={() => handleDateSelect(day)}
+                                    disabled={isPast}
+                                    className={`h-10 rounded-lg text-sm font-medium transition-all ${
+                                      isSelected
+                                        ? 'bg-yellow-500 text-black'
+                                        : isPast
+                                        ? 'text-white/20 cursor-not-allowed'
+                                        : isTodayDate
+                                        ? 'text-yellow-500 hover:bg-yellow-500/20'
+                                        : 'text-white hover:bg-white/10'
+                                    }`}
+                                  >
+                                    {day}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Time Picker */}
+                    <div>
+                      <label className="text-white/70 text-sm mb-2 block">Select Time</label>
+                      <div className="relative">
+                        <button
+                          onClick={() => setShowTimePicker(!showTimePicker)}
+                          className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-yellow-500 outline-none transition-colors text-left flex items-center justify-between"
+                        >
+                          <span className="flex items-center gap-2">
+                            <FiClock className="text-yellow-500" />
+                            {selectedTime || 'Select a time'}
+                          </span>
+                          <span className="text-yellow-500">Choose</span>
+                        </button>
+
+                        {showTimePicker && (
+                          <div className="absolute z-20 top-full left-0 mt-2 bg-[#1c1c1c] rounded-xl border border-white/10 p-3 w-full max-h-64 overflow-y-auto shadow-xl">
+                            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                              {timeSlots.map((time) => (
+                                <button
+                                  key={time}
+                                  onClick={() => {
+                                    setSelectedTime(time);
+                                    setShowTimePicker(false);
+                                  }}
+                                  className={`px-3 py-2 rounded-lg text-sm transition-all ${
+                                    selectedTime === time
+                                      ? 'bg-yellow-500 text-black font-semibold'
+                                      : 'bg-white/10 text-white hover:bg-white/20'
+                                  }`}
+                                >
+                                  {time}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {errors.time && <p className="text-red-500 text-sm mt-1">{errors.time}</p>}
+                    </div>
+                  </div>
 
                   {/* Special Notes */}
                   <div>
@@ -450,11 +644,11 @@ export default function Checkout() {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between text-white/70">
                       <span>Order Type</span>
-                      <span className="text-white">{orderType === 'dine-in' ? 'Dine In' : 'Takeout / Delivery'}</span>
+                      <span className="text-white capitalize">{orderType}</span>
                     </div>
                     <div className="flex justify-between text-white/70">
-                      <span>Time</span>
-                      <span className="text-white">{selectedTime}</span>
+                      <span>Schedule</span>
+                      <span className="text-white">{formatDate(selectedDate)} at {selectedTime}</span>
                     </div>
                     <div className="flex justify-between text-white/70">
                       <span>Name</span>
@@ -464,7 +658,7 @@ export default function Checkout() {
                       <span>Phone</span>
                       <span className="text-white">{formData.phone}</span>
                     </div>
-                    {orderType === 'takeout' && formData.address && (
+                    {orderType === 'delivery' && formData.address && (
                       <div className="flex justify-between text-white/70">
                         <span>Address</span>
                         <span className="text-white text-right">{formData.address}{formData.apartment && `, ${formData.apartment}`}</span>
@@ -518,7 +712,17 @@ export default function Checkout() {
                     />
                     <div className="flex-1 min-w-0">
                       <p className="text-white text-sm font-semibold line-clamp-1">{item.name}</p>
-                      <p className="text-yellow-500 text-sm">{item.price}</p>
+                      <div className="flex items-center gap-2">
+                        <p className="text-yellow-500 text-sm">{item.price}</p>
+                        <span className={`text-xs px-1.5 py-0.5 rounded capitalize ${
+                          item.spiceLevel === 'mild' ? 'bg-green-500/20 text-green-400' :
+                          item.spiceLevel === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                          item.spiceLevel === 'hot' ? 'bg-orange-500/20 text-orange-400' :
+                          'bg-red-500/20 text-red-400'
+                        }`}>
+                          {item.spiceLevel}
+                        </span>
+                      </div>
                     </div>
                     <div className="flex items-center gap-1">
                       <button
@@ -549,7 +753,7 @@ export default function Checkout() {
                   <span>Tax (5%)</span>
                   <span>${tax.toFixed(2)}</span>
                 </div>
-                {orderType === 'takeout' && (
+                {deliveryFee > 0 && (
                   <div className="flex justify-between text-white/70">
                     <span>Delivery Fee</span>
                     <span>${deliveryFee.toFixed(2)}</span>

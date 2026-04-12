@@ -139,16 +139,36 @@ const BlogDetail = () => {
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-6 md:mt-8 pt-6 md:pt-8 border-t border-white/10">
               <span className="text-white font-semibold text-sm md:text-base">Share:</span>
               <div className="flex items-center gap-2 sm:gap-3">
-                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-600/30">
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-600/30"
+                >
                   <FaFacebookF size={16} />
                 </a>
-                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-sky-500/30">
+                <a
+                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(blog.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-sky-500/30"
+                >
                   <FaTwitter size={16} />
                 </a>
-                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-600/30">
+                <a
+                  href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&description=${encodeURIComponent(blog.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-600/30"
+                >
                   <FaPinterest size={16} />
                 </a>
-                <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/30">
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(blog.title + ' ' + window.location.href)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/30"
+                >
                   <FaWhatsapp size={16} />
                 </a>
               </div>
@@ -209,14 +229,15 @@ const BlogDetail = () => {
               </h3>
               <div className="flex flex-col gap-2 md:gap-3">
                 {['North Indian', 'South Indian', 'Beverages', 'Main Course', 'Street Food', 'Desserts'].map((category) => (
-                  <a
+                  <Link
                     key={category}
-                    href="#"
+                    to="/menu"
+                    state={{ category }}
                     className="flex items-center justify-between text-white/70 hover:text-yellow-500 transition-all duration-300 py-2 border-b border-white/10 last:border-0 text-sm md:text-base group"
                   >
                     <span>{category}</span>
                     <FiArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

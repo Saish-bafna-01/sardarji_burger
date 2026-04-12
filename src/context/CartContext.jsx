@@ -8,10 +8,12 @@ export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [orderType, setOrderType] = useState(null); // 'dine-in' or 'takeout'
+  const [pendingItem, setPendingItem] = useState(null); // Item waiting for spice level selection
+  const [showSpiceModal, setShowSpiceModal] = useState(false);
 
-  // Generate unique cart ID for each item
-  const getCartItemId = (item) => {
-    return `${item.id}-${item.name}`.replace(/\s+/g, '-');
+  // Generate unique cart ID for each item (includes spice level)
+  const getCartItemId = (item, spiceLevel = 'medium') => {
+    return `${item.id}-${item.name}-${spiceLevel}`.replace(/\s+/g, '-');
   };
 
   // Load cart from localStorage on mount
@@ -27,9 +29,15 @@ export function CartProvider({ children }) {
     localStorage.setItem('sardarji_cart', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  // Add item to cart
-  const addToCart = (item) => {
-    const cartId = getCartItemId(item);
+  // Request to add item - shows spice level modal
+  const requestAddToCart = (item) => {
+    setPendingItem(item);
+    setShowSpiceModal(true);
+  };
+
+  // Add item to cart with spice level
+  const addToCart = (item, spiceLevel = 'medium') => {
+    const cartId = getCartItemId(item, spiceLevel);
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((i) => i.cartId === cartId);
       if (existingItem) {
@@ -37,8 +45,24 @@ export function CartProvider({ children }) {
           i.cartId === cartId ? { ...i, quantity: i.quantity + 1 } : i
         );
       }
-      return [...prevItems, { ...item, cartId, quantity: 1 }];
+      return [...prevItems, { ...item, cartId, quantity: 1, spiceLevel }];
     });
+    // Clear pending item
+    setPendingItem(null);
+    setShowSpiceModal(false);
+  };
+
+  // Confirm add with selected spice level
+  const confirmAddWithSpice = (spiceLevel) => {
+    if (pendingItem) {
+      addToCart(pendingItem, spiceLevel);
+    }
+  };
+
+  // Cancel add (close modal without adding)
+  const cancelAdd = () => {
+    setPendingItem(null);
+    setShowSpiceModal(false);
   };
 
   // Remove item from cart
@@ -80,9 +104,10 @@ export function CartProvider({ children }) {
 
   // Get item quantity in cart
   const getItemQuantity = (item) => {
-    const cartId = getCartItemId(item);
-    const cartItem = cartItems.find((i) => i.cartId === cartId);
-    return cartItem ? cartItem.quantity : 0;
+    // Sum quantities across all spice levels for this item
+    return cartItems
+      .filter((i) => i.id === item.id && i.name === item.name)
+      .reduce((total, i) => total + i.quantity, 0);
   };
 
   // Open cart
@@ -98,7 +123,12 @@ export function CartProvider({ children }) {
     cartItems,
     isCartOpen,
     orderType,
+    pendingItem,
+    showSpiceModal,
+    requestAddToCart,
     addToCart,
+    confirmAddWithSpice,
+    cancelAdd,
     removeFromCart,
     updateQuantity,
     clearCart,

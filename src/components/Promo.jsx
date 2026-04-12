@@ -1,4 +1,13 @@
 import { BsCheckLg } from "react-icons/bs";
+import { Link } from "react-router-dom";
+
+// Map CTA text to routes
+const ctaLinks = {
+  "About Us": "/about",
+  "Explore Menu": "/menu",
+  "Order Now": "/menu",
+  "Contact Us": "/contact",
+};
 
 export default function Promos({ promos = [] }) {
   return (
@@ -30,13 +39,13 @@ export default function Promos({ promos = [] }) {
                 ))}
               </div>
 
-              <a
-                href="#"
+              <Link
+                to={ctaLinks[cta] || "/menu"}
                 className="mt-2 text-yellow-400 text-sm md:text-base font-semibold hover:underline transition-all duration-300 hover:text-yellow-300 hover:translate-x-1 w-fit mx-auto md:mx-0 flex items-center gap-1 group/link"
               >
                 {cta}
                 <span className="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
-              </a>
+              </Link>
             </div>
 
             {/* Right — Image */}

@@ -260,7 +260,7 @@ export const specialOfferData = {
   heading: "Get A Special Offer For Your Special Occasion",
   description: "Celebrate your events with authentic Indian flavors and customized food options. Whether it's a birthday, anniversary, or corporate event, we've got you covered.",
   ctaText: "Book a Reservation",
-  ctaLink: "#",
+  ctaLink: "/contact",
 };
 
 // News Articles Data
@@ -315,13 +315,13 @@ export const footerData = {
     phone: "(825) 965-7973",
     email: "info@sardarjifastfood.com",
   },
-  address: "Edmonton, Alberta, Canada",
+  address: "2382 23 Ave NW, Edmonton, AB T6T 0R1",
   socialLinks: [
-    { name: "TikTok", href: "#" },
-    { name: "Facebook", href: "#" },
-    { name: "Instagram", href: "#" },
-    { name: "Pinterest", href: "#" },
-    { name: "YouTube", href: "#" },
+    { name: "TikTok", href: "https://www.tiktok.com/@sardarji.fast.food" },
+    { name: "Facebook", href: "https://www.facebook.com/people/Sardar-Ji-Fast-Food/61583740583407" },
+    { name: "Instagram", href: "https://www.instagram.com/sardarji_fastfood_mudpot/" },
+    { name: "Pinterest", href: "https://ca.pinterest.com/sardarjifastfood/" },
+    { name: "YouTube", href: "https://www.youtube.com/@SardarJiFastFoodMudpot" },
   ],
   copyright: "© Copyright 2026. All Rights Reserved.",
   credits: "Designed & Managed by ITBS.ca",

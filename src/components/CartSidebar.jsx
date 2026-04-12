@@ -2,6 +2,13 @@ import { FiX, FiMinus, FiPlus, FiTrash2, FiShoppingBag } from "react-icons/fi";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
+const spiceLevelColors = {
+  mild: 'bg-green-500/20 text-green-400',
+  medium: 'bg-yellow-500/20 text-yellow-400',
+  hot: 'bg-orange-500/20 text-orange-400',
+  'extra-hot': 'bg-red-500/20 text-red-400',
+};
+
 export default function CartSidebar() {
   const { cartItems, isCartOpen, closeCart, updateQuantity, removeFromCart, getCartTotal, clearCart } = useCart();
   const total = getCartTotal();
@@ -68,6 +75,12 @@ export default function CartSidebar() {
                     <h4 className="text-white font-semibold text-sm sm:text-base line-clamp-1">
                       {item.name}
                     </h4>
+                    {/* Spice Level Badge */}
+                    {item.spiceLevel && (
+                      <span className={`inline-block text-xs px-2 py-0.5 rounded-full capitalize mt-1 ${spiceLevelColors[item.spiceLevel] || 'bg-white/10 text-white'}`}>
+                        {item.spiceLevel.replace('-', ' ')}
+                      </span>
+                    )}
                     <p className="text-yellow-500 font-bold text-sm sm:text-base mt-1">
                       {item.price}
                     </p>
