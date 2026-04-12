@@ -2,6 +2,7 @@ import { CiForkAndKnife } from "react-icons/ci";
 import { SlDrop } from "react-icons/sl";
 import { LuLeaf } from "react-icons/lu";
 import burgerImg from "../assets/images/burger.png";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -62,12 +63,12 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 sm:gap-4 mt-2 animate-fade-in-up animation-delay-600">
-            <a
+            <Link
               href="/menu"
               className="inline-block bg-yellow-500 hover:bg-yellow-600 text-black text-sm md:text-base font-semibold px-6 sm:px-8 py-3 md:py-4 rounded transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/20 w-full sm:w-auto text-center"
             >
               Order Now
-            </a>
+            </Link>
             {/* <a
               href="/menu"
               className="inline-block border-2 border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-black text-sm md:text-base font-semibold px-6 sm:px-8 py-3 md:py-4 rounded transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/20 w-full sm:w-auto text-center"
