@@ -19,6 +19,13 @@ const features = [
   },
 ];
 
+const ctaLinks = {
+  "About Us": "/about",
+  "Explore Menu": "/menu",
+  "Order Now": "/menu",
+  "Contact Us": "/contact",
+};
+
 export default function Hero() {
   return (
     <section className="w-full min-h-[calc(100vh-72px)] md:min-h-[calc(100vh-80px)] bg-[#111111] flex items-center px-4 sm:px-6 md:px-12 lg:px-20 xl:px-48 py-8 md:py-12 lg:py-15 overflow-hidden">
@@ -64,7 +71,7 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 sm:gap-4 mt-2 animate-fade-in-up animation-delay-600">
             <Link
-              href="/menu"
+              to={ctaLinks[cta] || "/menu"}
               className="inline-block bg-yellow-500 hover:bg-yellow-600 text-black text-sm md:text-base font-semibold px-6 sm:px-8 py-3 md:py-4 rounded transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/20 w-full sm:w-auto text-center"
             >
               Order Now
