@@ -1,0 +1,55 @@
+// Contact Page Data
+import contactHeroBg from "../assets/images/about_bg.jpg";
+
+// Contact Hero Data
+export const contactHeroData = {
+  backgroundImage: contactHeroBg,
+  heading: "Get In Touch With Us",
+  description: "We'd love to hear from you! Reach out for reservations, catering, or any questions about our menu.",
+};
+
+// Contact Section Data
+export const contactSectionData = {
+  heading: "Get Closer",
+  description: "Have questions about our menu, want to make a reservation, or need catering for your next event? We're here to help! Reach out to us and our friendly team will get back to you as soon as possible.",
+  contactInfo: [
+    {
+      id: "location",
+      icon: "map",
+      title: "Location",
+      detail: "Edmonton, Alberta, Canada",
+    },
+    {
+      id: "email",
+      icon: "email",
+      title: "Email",
+      detail: "info@sardarjifastfood.com",
+    },
+    {
+      id: "phone",
+      icon: "phone",
+      title: "Phone",
+      detail: "(825) 965-7973",
+    },
+    {
+      id: "hours",
+      icon: "clock",
+      title: "Opening Hours",
+      detail: "24/7 - We are always open to serve you!",
+    },
+  ],
+  socialLinks: [
+    { name: "Facebook", href: "#" },
+    { name: "Instagram", href: "#" },
+    { name: "TikTok", href: "#" },
+    { name: "YouTube", href: "#" },
+  ],
+  formHeading: "Your Details",
+  formFields: [
+    { name: "firstName", label: "First Name", type: "text", placeholder: "Your Name", required: true },
+    { name: "email", label: "Email Address", type: "email", placeholder: "email@yourmail.com", required: true },
+    { name: "subject", label: "Subject", type: "text", placeholder: "Subject", required: true },
+    { name: "message", label: "Comments / Questions", type: "textarea", placeholder: "Your Message", rows: 6, required: true },
+  ],
+  submitText: "Submit Message",
+};
