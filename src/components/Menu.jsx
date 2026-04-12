@@ -3,7 +3,6 @@ import AddToCartButton from "./AddToCartButton";
 
 export default function Menu({ menuData = {}, tabs = [], header = {} }) {
   const [activeTab, setActiveTab] = useState(tabs[0] || "");
-
   const currentMenuItems = menuData[activeTab] || [];
 
   return (
