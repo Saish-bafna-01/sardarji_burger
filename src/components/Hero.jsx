@@ -21,7 +21,7 @@ const features = [
 
 export default function Hero() {
   return (
-    <section className="w-full min-h-[calc(100vh-72px)] md:min-h-[calc(100vh-80px)] bg-[#111111] flex items-center px-4 sm:px-6 md:px-12 lg:px-20 xl:px-48 py-8 md:py-12 lg:py-15 overflow-hidden">
+    <section className="w-full bg-[#111111] flex items-center px-4 sm:px-6 md:px-12 lg:px-20 xl:px-48 py-8 overflow-hidden">
       <div className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
         {/* Left — Burger Image */}
         <div className="flex justify-center md:justify-start order-1 md:order-1">

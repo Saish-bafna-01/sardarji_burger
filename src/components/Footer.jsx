@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FiSend } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaTiktok, FaPinterest, FaYoutube } from "react-icons/fa";
 import { MdOutlinePhoneInTalk, MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
+import logoImg from "../assets/images/logo4.png";
 
 const socialIcons = {
   TikTok: <FaTiktok size={16} />,
@@ -63,7 +64,7 @@ export default function Footer({
           {/* Col 1 — Brand */}
           <div className="flex flex-col gap-3 md:gap-4 col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-2">
             <Link to="/" className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight text-white hover:text-yellow-400 transition-colors">
-              {brand.name}
+              <img src={logoImg} alt="Sardarji Logo" className="h-30 w-auto" />
             </Link>
             <p className="text-white/60 text-sm sm:text-base leading-relaxed">
               {brand.tagline}
