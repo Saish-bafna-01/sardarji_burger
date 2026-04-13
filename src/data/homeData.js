@@ -110,7 +110,8 @@ export const promosData = [
     id: "taste-flavors",
     tag: "Taste the Real Flavors",
     title: "Taste the Real Flavors of India",
-    description: "Experience authentic recipes made with fresh ingredients and traditional spices.",
+    description:
+      "Experience authentic recipes made with fresh ingredients and traditional spices.",
     features: [
       "Freshly prepared meals daily",
       "Authentic Punjabi & South Indian taste",
@@ -125,7 +126,8 @@ export const promosData = [
     id: "street-food",
     tag: "Street Food",
     title: "Street Food That Feels Like Home",
-    description: "From crispy snacks to spicy delights, enjoy your favorite Indian street food in Edmonton.",
+    description:
+      "From crispy snacks to spicy delights, enjoy your favorite Indian street food in Edmonton.",
     features: [
       "Homemade-style flavors",
       "Perfect for quick bites",
@@ -142,7 +144,8 @@ export const promosData = [
 export const aboutSectionData = {
   image: aboutImg,
   title: "Taste the Real Flavors of India",
-  description: "Experience authentic recipes made with fresh ingredients and traditional spices. We bring the taste of Punjab and South India to Edmonton with love and passion.",
+  description:
+    "Experience authentic recipes made with fresh ingredients and traditional spices. We bring the taste of Punjab and South India to Edmonton with love and passion.",
   features: [
     "Freshly prepared meals daily",
     "Authentic Punjabi & South Indian taste",
@@ -156,56 +159,226 @@ export const aboutSectionData = {
 // Menu Data
 export const menuData = {
   "North Indian": [
-    { id: 1, name: "Chana Bhature", desc: "Authentic Punjabi chickpea curry with fluffy bhature", price: "$9.99", img: chanaBhature },
-    { id: 2, name: "Pav Bhaji", desc: "Spiced vegetable mash with buttery pav", price: "$7.99", img: pavBhaji },
-    { id: 3, name: "Veg Thali", desc: "Complete Indian meal with rice, roti, sabji, raita & salad", price: "$9.99", img: vegThali },
-    { id: 4, name: "Aloo Parantha", desc: "Stuffed potato flatbread with desi ghee", price: "$3.99", img: alooParantha },
-    { id: 5, name: "Shahi Paneer", desc: "Creamy tomato-based paneer curry", price: "$7.99", img: shahiPaneer },
-    { id: 6, name: "Matar Paneer", desc: "Peas and paneer in tomato gravy", price: "$7.99", img: matarPaneer },
+    {
+      id: 1,
+      name: "Chana Bhature",
+      desc: "Authentic Punjabi chickpea curry with fluffy bhature",
+      price: "$9.99",
+      img: chanaBhature,
+    },
+    {
+      id: 2,
+      name: "Pav Bhaji",
+      desc: "Spiced vegetable mash with buttery pav",
+      price: "$7.99",
+      img: pavBhaji,
+    },
+    {
+      id: 3,
+      name: "Veg Thali",
+      desc: "Complete Indian meal with rice, roti, sabji, raita & salad",
+      price: "$9.99",
+      img: vegThali,
+    },
+    {
+      id: 4,
+      name: "Aloo Parantha",
+      desc: "Stuffed potato flatbread with desi ghee",
+      price: "$3.99",
+      img: alooParantha,
+    },
+    {
+      id: 5,
+      name: "Shahi Paneer",
+      desc: "Creamy tomato-based paneer curry",
+      price: "$7.99",
+      img: shahiPaneer,
+    },
+    {
+      id: 6,
+      name: "Matar Paneer",
+      desc: "Peas and paneer in tomato gravy",
+      price: "$7.99",
+      img: matarPaneer,
+    },
   ],
   "South Indian": [
-    { id: 1, name: "Masala Dosa", desc: "Crispy South Indian dosa with chutney & sambar", price: "$12.99", img: masalaDosa },
-    { id: 2, name: "Paneer Dosa", desc: "Dosa filled with spiced paneer", price: "$12.99", img: paneerDosa },
-    { id: 3, name: "Ghee Roast Dosa", desc: "Crispy dosa roasted in pure ghee", price: "$12.99", img: gheeDosa },
-    { id: 4, name: "Idly", desc: "Steamed rice cakes with sambar & chutney", price: "$10.99", img: idly },
+    {
+      id: 1,
+      name: "Masala Dosa",
+      desc: "Crispy South Indian dosa with chutney & sambar",
+      price: "$12.99",
+      img: masalaDosa,
+    },
+    {
+      id: 2,
+      name: "Paneer Dosa",
+      desc: "Dosa filled with spiced paneer",
+      price: "$12.99",
+      img: paneerDosa,
+    },
+    {
+      id: 3,
+      name: "Ghee Roast Dosa",
+      desc: "Crispy dosa roasted in pure ghee",
+      price: "$12.99",
+      img: gheeDosa,
+    },
+    {
+      id: 4,
+      name: "Idly",
+      desc: "Steamed rice cakes with sambar & chutney",
+      price: "$10.99",
+      img: idly,
+    },
   ],
   "Street Food": [
-    { id: 1, name: "Paneer Pakora", desc: "Crispy fried paneer fritters", price: "$9.99", img: paneerPakora },
-    { id: 2, name: "Aloo Tikki Chaat", desc: "Spiced potato patties with chutneys", price: "$6.99", img: alooTikkiChaat },
-    { id: 3, name: "Papri Chaat", desc: "Crispy wafers with yogurt and chutneys", price: "$5.99", img: papriChaat },
-    { id: 4, name: "Dahi Bhalla", desc: "Lentil dumplings in spiced yogurt", price: "$7.99", img: dahiBhalla },
+    {
+      id: 1,
+      name: "Paneer Pakora",
+      desc: "Crispy fried paneer fritters",
+      price: "$9.99",
+      img: paneerPakora,
+    },
+    {
+      id: 2,
+      name: "Aloo Tikki Chaat",
+      desc: "Spiced potato patties with chutneys",
+      price: "$6.99",
+      img: alooTikkiChaat,
+    },
+    {
+      id: 3,
+      name: "Papri Chaat",
+      desc: "Crispy wafers with yogurt and chutneys",
+      price: "$5.99",
+      img: papriChaat,
+    },
+    {
+      id: 4,
+      name: "Dahi Bhalla",
+      desc: "Lentil dumplings in spiced yogurt",
+      price: "$7.99",
+      img: dahiBhalla,
+    },
   ],
-  "Beverages": [
-    { id: 1, name: "Mango Lassi", desc: "Refreshing yogurt-based mango drink", price: "$5.99", img: mangoLassi },
-    { id: 2, name: "Tea (Chai)", desc: "Traditional Indian spiced tea", price: "$0.99", img: chai },
-    { id: 3, name: "Lassi (Sweet/Salty)", desc: "Traditional yogurt drink", price: "$3.99", img: lassi },
-    { id: 4, name: "Mango Shake", desc: "Thick and creamy mango shake", price: "$4.99", img: mangoShake },
-    { id: 5, name: "Milkshake", desc: "Creamy milkshake in various flavors", price: "$5.99", img: milkshake },
-    { id: 6, name: "Lemonade", desc: "Refreshing fresh lemonade", price: "$4.99", img: lemonade },
-    { id: 7, name: "Carrot Juice", desc: "Fresh carrot juice", price: "$5.99", img: carrotJuice },
-    { id: 8, name: "Lemon Soda", desc: "Refreshing lemon soda", price: "$4.99", img: lemonSoda },
-    { id: 9, name: "Canned Pop", desc: "Assorted canned beverages", price: "$1.75", img: cannedPop },
-    { id: 10, name: "Bottled Water", desc: "Pure drinking water", price: "$2.25", img: bottledWater },
+  Beverages: [
+    {
+      id: 1,
+      name: "Mango Lassi",
+      desc: "Refreshing yogurt-based mango drink",
+      price: "$5.99",
+      img: mangoLassi,
+    },
+    {
+      id: 2,
+      name: "Tea (Chai)",
+      desc: "Traditional Indian spiced tea",
+      price: "$0.99",
+      img: chai,
+    },
+    {
+      id: 3,
+      name: "Lassi (Sweet/Salty)",
+      desc: "Traditional yogurt drink",
+      price: "$3.99",
+      img: lassi,
+    },
+    {
+      id: 4,
+      name: "Mango Shake",
+      desc: "Thick and creamy mango shake",
+      price: "$4.99",
+      img: mangoShake,
+    },
+    {
+      id: 5,
+      name: "Milkshake",
+      desc: "Creamy milkshake in various flavors",
+      price: "$5.99",
+      img: milkshake,
+    },
+    {
+      id: 6,
+      name: "Lemonade",
+      desc: "Refreshing fresh lemonade",
+      price: "$4.99",
+      img: lemonade,
+    },
+    {
+      id: 7,
+      name: "Carrot Juice",
+      desc: "Fresh carrot juice",
+      price: "$5.99",
+      img: carrotJuice,
+    },
+    {
+      id: 8,
+      name: "Lemon Soda",
+      desc: "Refreshing lemon soda",
+      price: "$4.99",
+      img: lemonSoda,
+    },
+    {
+      id: 9,
+      name: "Canned Pop",
+      desc: "Assorted canned beverages",
+      price: "$1.75",
+      img: cannedPop,
+    },
+    {
+      id: 10,
+      name: "Bottled Water",
+      desc: "Pure drinking water",
+      price: "$2.25",
+      img: bottledWater,
+    },
   ],
-  "Desserts": [
-    { id: 1, name: "Hot Gulab Jamun", desc: "Deep-fried milk balls in sugar syrup (2 pcs)", price: "$3.99", img: gulabJamun },
-    { id: 2, name: "Be-be's Churi", desc: "Traditional sweet treat with desi ghee & gur", price: "$3.99", img: bebeChuri },
-    { id: 3, name: "Mom's Churi", desc: "Homestyle sweet dessert with desi ghee & sugar", price: "$3.99", img: momChuri },
+  Desserts: [
+    {
+      id: 1,
+      name: "Hot Gulab Jamun",
+      desc: "Deep-fried milk balls in sugar syrup (2 pcs)",
+      price: "$3.99",
+      img: gulabJamun,
+    },
+    {
+      id: 2,
+      name: "Be-be's Churi",
+      desc: "Traditional sweet treat with desi ghee & gur",
+      price: "$3.99",
+      img: bebeChuri,
+    },
+    {
+      id: 3,
+      name: "Mom's Churi",
+      desc: "Homestyle sweet dessert with desi ghee & sugar",
+      price: "$3.99",
+      img: momChuri,
+    },
   ],
 };
 
-export const menuTabs = ["North Indian", "South Indian", "Street Food", "Beverages", "Desserts"];
+export const menuTabs = [
+  "North Indian",
+  "South Indian",
+  "Street Food",
+  "Beverages",
+  "Desserts",
+];
 
 // Menu Section Header
 export const menuSectionHeader = {
   title: "Our Best Menu",
-  subtitle: "Authentic North & South Indian cuisine, street food, beverages, and desserts.",
+  subtitle:
+    "Authentic North & South Indian cuisine, street food, beverages, and desserts.",
 };
 
 // Video Section Data
 export const videoSectionData = {
   heading: "Don't worry! You can order your food just by phone",
-  description: "Enjoy your favorite meals anytime, anywhere with quick and easy ordering.",
+  description:
+    "Enjoy your favorite meals anytime, anywhere with quick and easy ordering.",
   highlights: ["Free Delivery", "Quick Service", "Fresh Food", "Easy Ordering"],
   videoUrl: "https://www.youtube.com/embed/HS24PywYlxg",
   phone: "(825) 965-7973",
@@ -214,7 +387,8 @@ export const videoSectionData = {
 // Testimonials Data
 export const testimonialsData = {
   heading: "What Our Customers Say",
-  subtitle: "Hear from our valued customers about their experience at Sardarji Fastfood & Mudpot.",
+  subtitle:
+    "Hear from our valued customers about their experience at Sardarji Fastfood & Mudpot.",
   reviews: [
     {
       id: 1,
@@ -258,7 +432,8 @@ export const testimonialsData = {
 export const specialOfferData = {
   backgroundImage: offerImg,
   heading: "Get A Special Offer For Your Special Occasion",
-  description: "Celebrate your events with authentic Indian flavors and customized food options. Whether it's a birthday, anniversary, or corporate event, we've got you covered.",
+  description:
+    "Celebrate your events with authentic Indian flavors and customized food options. Whether it's a birthday, anniversary, or corporate event, we've got you covered.",
   ctaText: "Book a Reservation",
   ctaLink: "/contact",
 };
@@ -266,7 +441,8 @@ export const specialOfferData = {
 // News Articles Data
 export const newsArticlesData = {
   heading: "Our Blog & News",
-  subtitle: "Stay updated with the latest food trends, cooking tips, and special offers from Sardarji Fastfood & Mudpot.",
+  subtitle:
+    "Stay updated with the latest food trends, cooking tips, and special offers from Sardarji Fastfood & Mudpot.",
   articles: [
     {
       id: 1,
@@ -296,12 +472,14 @@ export const newsArticlesData = {
 export const footerData = {
   newsletter: {
     heading: "Get Exclusive Updates",
-    description: "Stay updated with our latest offers, new menu items, and promotions.",
+    description:
+      "Stay updated with our latest offers, new menu items, and promotions.",
   },
   brand: {
     name: "Sardarji Fastfood & Mudpot",
-    tagline: "Flavors That Feel Like Home",
-    description: "Authentic North & South Indian cuisine served with love in Edmonton, Alberta.",
+    // tagline: "Flavors That Feel Like Home",
+    description:
+      "Flavors that feel like home, crafted with tradition and care. We bring you the rich essence of North and South Indian cuisine, prepared with authentic spices and heartfelt passion. Experience the warmth of Indian hospitality right here in Edmonton, Alberta.",
   },
   quickLinks: [
     { name: "Home", path: "/" },
@@ -318,10 +496,19 @@ export const footerData = {
   address: "2382 23 Ave NW, Edmonton, AB T6T 0R1",
   socialLinks: [
     { name: "TikTok", href: "https://www.tiktok.com/@sardarji.fast.food" },
-    { name: "Facebook", href: "https://www.facebook.com/people/Sardar-Ji-Fast-Food/61583740583407" },
-    { name: "Instagram", href: "https://www.instagram.com/sardarji_fastfood_mudpot/" },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/people/Sardar-Ji-Fast-Food/61583740583407",
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/sardarji_fastfood_mudpot/",
+    },
     { name: "Pinterest", href: "https://ca.pinterest.com/sardarjifastfood/" },
-    { name: "YouTube", href: "https://www.youtube.com/@SardarJiFastFoodMudpot" },
+    {
+      name: "YouTube",
+      href: "https://www.youtube.com/@SardarJiFastFoodMudpot",
+    },
   ],
   copyright: "© Copyright 2026. All Rights Reserved.",
   credits: "Designed & Managed by ITBS.ca",

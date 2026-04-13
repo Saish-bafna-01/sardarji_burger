@@ -1,8 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiSend } from "react-icons/fi";
-import { FaFacebookF, FaInstagram, FaTiktok, FaPinterest, FaYoutube } from "react-icons/fa";
-import { MdOutlinePhoneInTalk, MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTiktok,
+  FaPinterest,
+  FaYoutube,
+} from "react-icons/fa";
+import {
+  MdOutlinePhoneInTalk,
+  MdOutlineEmail,
+  MdOutlineLocationOn,
+} from "react-icons/md";
 import logoImg from "../assets/images/logo4.png";
 
 const socialIcons = {
@@ -30,7 +40,7 @@ export default function Footer({
     <footer className="w-full">
       {/* Newsletter Banner */}
       <div className="w-full bg-yellow-400 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-8 md:py-10 lg:py-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+        <div className="mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
           {/* Left text */}
           <div className="flex flex-col gap-1 md:gap-2 text-center md:text-left">
             <h2 className="text-black oswald text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight">
@@ -60,15 +70,15 @@ export default function Footer({
 
       {/* Footer Body */}
       <div className="w-full bg-black px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-10 md:py-14 lg:py-16">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-13">
           {/* Col 1 — Brand */}
           <div className="flex flex-col gap-3 md:gap-4 col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-2">
-            <Link to="/" className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight text-white hover:text-yellow-400 transition-colors">
+            <Link
+              to="/"
+              className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight text-white hover:text-yellow-400 transition-colors"
+            >
               <img src={logoImg} alt="Sardarji Logo" className="h-30 w-auto" />
             </Link>
-            <p className="text-white/60 text-sm sm:text-base leading-relaxed">
-              {brand.tagline}
-            </p>
             <p className="text-white/60 text-sm sm:text-base leading-relaxed hidden sm:block">
               {brand.description}
             </p>
@@ -103,12 +113,32 @@ export default function Footer({
             <ul className="flex flex-col gap-2 md:gap-3">
               {supportLinks.map((item) => (
                 <li key={item}>
-                  <Link to="/contact" className="text-white/70 text-sm sm:text-base hover:text-yellow-400 transition-colors duration-200">
+                  <Link
+                    to="/contact"
+                    className="text-white/70 text-sm sm:text-base hover:text-yellow-400 transition-colors duration-200"
+                  >
                     {item}
                   </Link>
                 </li>
               ))}
             </ul>
+
+            <div className="hidden lg:block flex-col gap-2 md:gap-3">
+              <h4 className="text-white oswald text-base sm:text-lg md:text-xl font-bold uppercase tracking-wide">
+                Follow Us
+              </h4>
+              <div className="flex items-center gap-3 md:gap-4 mt-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200"
+                  >
+                    {socialIcons[social.name] || null}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Col 4 — Contact Info */}
@@ -119,32 +149,47 @@ export default function Footer({
                 Contact
               </h4>
               {contact.phone && (
-                <a href={`tel:+1${contact.phone.replace(/\D/g, "")}`} className="flex items-center gap-2 text-white/70 text-sm sm:text-base hover:text-yellow-400 transition-colors">
+                <a
+                  href={`tel:+1${contact.phone.replace(/\D/g, "")}`}
+                  className="flex items-center gap-2 text-white/70 text-sm sm:text-base hover:text-yellow-400 transition-colors"
+                >
                   <MdOutlinePhoneInTalk className="text-yellow-400" size={18} />
-                  <span className="text-xs sm:text-sm md:text-base">{contact.phone}</span>
+                  <span className="text-xs sm:text-sm md:text-base">
+                    {contact.phone}
+                  </span>
                 </a>
               )}
               {contact.email && (
-                <a href={`mailto:${contact.email}`} className="flex items-center gap-2 text-white/70 text-sm sm:text-base hover:text-yellow-400 transition-colors">
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="flex items-center text-white/70 gap-2 text-sm sm:text-base hover:text-yellow-400 transition-colors"
+                >
                   <MdOutlineEmail className="text-yellow-400" size={18} />
-                  <span className="text-xs sm:text-sm md:text-base break-all">{contact.email}</span>
+                  <span className="text-xs sm:text-sm md:text-base break-all">
+                    {contact.email}
+                  </span>
                 </a>
               )}
             </div>
             {/* Address */}
-            <div className="flex flex-col gap-2 md:gap-3">
+            <div className="flex flex-col gap-2 md:gap-3 lg:mt-16">
               <h4 className="text-white oswald text-base sm:text-lg md:text-xl font-bold uppercase tracking-wide">
                 Address
               </h4>
               {address && (
                 <div className="flex items-start gap-2 text-white/70 text-sm sm:text-base">
-                  <MdOutlineLocationOn className="text-yellow-400 mt-0.5 flex-shrink-0" size={18} />
-                  <span className="text-xs sm:text-sm md:text-base">{address}</span>
+                  <MdOutlineLocationOn
+                    className="text-yellow-400 mt-0.5 flex-shrink-0"
+                    size={18}
+                  />
+                  <span className="text-xs sm:text-sm md:text-base">
+                    {address}
+                  </span>
                 </div>
               )}
             </div>
             {/* Social Links */}
-            <div className="flex flex-col gap-2 md:gap-3">
+            <div className="lg:hidden flex flex-col gap-2 md:gap-3">
               <h4 className="text-white oswald text-base sm:text-lg md:text-xl font-bold uppercase tracking-wide">
                 Follow Us
               </h4>
@@ -170,9 +215,13 @@ export default function Footer({
           <p className="text-white/50 text-xs sm:text-sm text-center md:text-left">
             {copyright}
           </p>
-          <p className="text-white/50 text-xs sm:text-sm">
+          <a
+            href="https://itbs.ca/"
+            target="_blank"
+            className="text-white/50 text-xs sm:text-sm"
+          >
             {credits}
-          </p>
+          </a>
         </div>
       </div>
     </footer>
