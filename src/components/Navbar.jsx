@@ -21,12 +21,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-[#111111] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-40 py-4 md:py-6 lg:py-8 flex items-center justify-between relative z-50">
+    <nav className="w-full bg-[#111111] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-40 py-2 md:py-4 lg:py-6 flex items-center justify-between relative z-50">
       {/* Logo */}
       <Link to="/" className="text-lg sm:text-xl md:text-2xl lg:text-3xl oswald font-extrabold tracking-tight select-none">
         {/* <span className="text-yellow-400">Sardarji</span>
         <span className="text-white hidden sm:inline"> Fastfood & Mudpot</span> */}
-        <img src={logoImg} alt="Sardarji Logo" className="h-25 w-auto" />
+        <img src={logoImg} alt="Sardarji Logo" className="lg:h-20 h-15 w-auto" />
       </Link>
 
       {/* Desktop Nav Links */}
