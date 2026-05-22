@@ -1,5 +1,5 @@
 // Contact Page Data
-import contactHeroBg from "../assets/images/contact.jpg";
+import contactHeroBg from "../assets/images/Contact.jpg";
 
 
 // Contact Hero Data
