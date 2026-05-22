@@ -1,13 +1,13 @@
 export default function Categories({ categories = [] }) {
   return (
     <section className="w-full bg-[#1d384e] py-8 md:py-12 px-4 sm:px-6 md:px-12 lg:px-16">
-      <div className="max-w-full mx-auto">
+      <div className="max-w-full mx-auto mt-10">
         {/* Grid - responsive columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 sm:gap-5 md:gap-6 lg:gap-8">
           {categories.map(({ id, title, description, bg, textColor, linkColor, image, align }, index) => (
             <div
               key={id}
-              className={`${bg} rounded-xl md:rounded-2xl flex items-end overflow-visible relative group cursor-pointer transition-transform duration-300 hover:scale-105 animate-fade-in-up h-[50px] md:h-[80px]`}
+              className={`${bg} rounded-xl md:rounded-2xl flex items-end overflow-visible relative group cursor-pointer transition-transform duration-300 hover:scale-105 animate-fade-in-up h-[60px] md:h-[80px]`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Food Image — left side, bottom touches box, top extends above */}

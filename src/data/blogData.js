@@ -8,7 +8,7 @@ import vegThaliImg from "../assets/images/Veg Thali (Rice + 3 Roti + Any Two Sab
 // Blog Hero Data
 export const blogHeroData = {
   backgroundImage: blogHeroBg,
-  heading: "Discover the Taste of Authentic Indian Food",
+  heading: "Authentic Indian Food",
   description: "Explore delicious stories, food insights, and traditional recipes from North & South Indian cuisine — right here in Edmonton.",
 };
 

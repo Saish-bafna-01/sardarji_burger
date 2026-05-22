@@ -1,6 +1,6 @@
 // About Page Data
 import aboutHeroBg from "../assets/images/about.png";
-import aboutImg from "../assets/images/about.png";
+import aboutImg from "../assets/images/about_bg.png";
 
 // About Hero Data
 export const aboutHeroData = {

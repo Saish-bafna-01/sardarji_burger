@@ -49,7 +49,7 @@ import palakPaneer from "../assets/images/Palak Paneer.png";
 import jeeraRice from "../assets/images/Jeera Rice.png";
 import plainRice from "../assets/images/Plain Rice.png";
 import riceVegBowl from "../assets/images/Rice Veg Bowl Rice Tadka Dal Rajma Kadhi Pakora.png";
-import vegThali from "../assets/images/Thali.png";
+import vegThali from "../assets/images/Veg Thali (Rice + 3 Roti + Any Two Sabji + Raita + Salad).png";
 
 // Paranthas
 import alooParantha from "../assets/images/Desi Ghee Aloo Parantha.png";

@@ -8,12 +8,13 @@ import ContactSection from '../components/Contactsection'
 import { contactHeroData, contactSectionData } from '../data/contactData'
 import { footerData } from '../data/homeData'
 import MapSection from '../components/Mapsection'
+import ContactHero from '../components/Contacthero'
 
 const Contact = () => {
   return (
     <div>
       <Navbar />
-      <AboutHero {...contactHeroData} />
+      <ContactHero {...contactHeroData} />
       <ContactSection {...contactSectionData} />
       <MapSection />
       <Footer {...footerData} />

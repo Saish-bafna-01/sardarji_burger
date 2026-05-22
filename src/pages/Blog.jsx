@@ -12,12 +12,13 @@ import {
   blogArticlesData,
 } from '../data/blogData'
 import { footerData } from '../data/homeData'
+import ContactHero from '../components/Contacthero'
 
 const Blog = () => {
   return (
     <div>
       <Navbar />
-      <AboutHero {...blogHeroData} />
+      <ContactHero {...blogHeroData} />
       <FeaturedBlogs
         heading={featuredBlogsData.heading}
         blogs={featuredBlogsData.blogs}
