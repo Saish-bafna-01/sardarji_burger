@@ -6,14 +6,14 @@ import "swiper/css";
 
 export default function Testimonials({ heading, subtitle, reviews = [] }) {
   return (
-    <section className="w-full bg-[#111111] py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#1d384e] py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="flex flex-col items-center gap-3 md:gap-4 lg:gap-5 mb-4">
           <h2 className="text-white oswald text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide text-center animate-fade-in-up">
             {heading}
           </h2>
-          <div className="w-16 sm:w-20 md:w-24 lg:w-32 h-[3px] bg-yellow-400 rounded-full animate-scale-x" />
+          <div className="w-16 sm:w-20 md:w-24 lg:w-32 h-[3px] bg-[#c0d4b2] rounded-full animate-scale-x" />
           {subtitle && (
             <p className="text-white/70 text-sm sm:text-base md:text-lg text-center max-w-sm md:max-w-xl mt-1 md:mt-2 leading-relaxed animate-fade-in-up animation-delay-200">
               {subtitle}
@@ -40,7 +40,7 @@ export default function Testimonials({ heading, subtitle, reviews = [] }) {
         >
           {reviews.map((review, index) => (
             <SwiperSlide key={review.id} className="flex h-auto">
-              <div className="bg-[#1c1c1c] rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-7 flex flex-col justify-between gap-4 md:gap-6 w-full h-full min-h-[180px] md:min-h-[200px] transition-all duration-500 hover:bg-[#252525] hover:shadow-2xl hover:shadow-yellow-500/10 hover:-translate-y-3 group animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+              <div className="bg-white/5 rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-7 flex flex-col justify-between gap-4 md:gap-6 w-full h-full min-h-[180px] md:min-h-[200px] transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-[#c0d4b2]/10 hover:-translate-y-3 group animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
                 {/* Text */}
                 <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed italic flex-grow transition-colors duration-300 group-hover:text-white/90">
                   "{review.text}"
@@ -52,10 +52,10 @@ export default function Testimonials({ heading, subtitle, reviews = [] }) {
                     <img
                       src={review.avatar}
                       alt={review.name}
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 ring-2 ring-transparent group-hover:ring-yellow-400"
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 ring-2 ring-transparent group-hover:ring-[#c0d4b2]"
                     />
                     <div>
-                      <p className="text-white oswald text-xs sm:text-sm md:text-base font-bold uppercase tracking-wide transition-colors duration-300 group-hover:text-yellow-400">
+                      <p className="text-white oswald text-xs sm:text-sm md:text-base font-bold uppercase tracking-wide transition-colors duration-300 group-hover:text-[#c0d4b2]">
                         {review.name}
                       </p>
                       <p className="text-gray-400 text-xs md:text-sm transition-colors duration-300 group-hover:text-gray-300">
@@ -64,7 +64,7 @@ export default function Testimonials({ heading, subtitle, reviews = [] }) {
                     </div>
                   </div>
 
-                  <FaQuoteRight size={10} className="text-yellow-400 flex-shrink-0 md:size-10 transition-all duration-300 group-hover:scale-110 group-hover:text-yellow-300" />
+                  <FaQuoteRight size={10} className="text-[#c0d4b2] flex-shrink-0 md:size-10 transition-all duration-300 group-hover:scale-110 group-hover:text-[#c0d4b2]-300" />
                 </div>
               </div>
             </SwiperSlide>

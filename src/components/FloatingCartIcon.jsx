@@ -11,7 +11,7 @@ export default function FloatingCartIcon() {
   return (
     <button
       onClick={openCart}
-      className="fixed bottom-6 right-6 z-40 bg-yellow-500 hover:bg-yellow-600 text-black w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-lg shadow-yellow-500/30 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 animate-bounce-in"
+      className="fixed bottom-6 right-6 z-40 bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-lg shadow-[#c0d4b2]/30 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 animate-bounce-in"
       aria-label="Open cart"
     >
       <FiShoppingBag size={24} className="sm:w-7 sm:h-7" />

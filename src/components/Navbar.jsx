@@ -21,10 +21,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-[#111111] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-40 py-2 md:py-4 lg:py-6 flex items-center justify-between relative z-50">
+    <nav className="w-full bg-[#1d384e] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-40 py-2 md:py-4 lg:py-6 flex items-center justify-between relative z-50">
       {/* Logo */}
       <Link to="/" className="text-lg sm:text-xl md:text-2xl lg:text-3xl oswald font-extrabold tracking-tight select-none">
-        {/* <span className="text-yellow-400">Sardarji</span>
+        {/* <span className="text-[#c0d4b2]">Sardarji</span>
         <span className="text-white hidden sm:inline"> Fastfood & Mudpot</span> */}
         <img src={logoImg} alt="Sardarji Logo" className="lg:h-20 h-15 w-auto" />
       </Link>
@@ -38,8 +38,8 @@ export default function Navbar() {
                 to={item.path}
                 className={`transition-colors duration-200 ${
                   isActive(item.path)
-                    ? "text-yellow-400"
-                    : "text-gray-300 hover:text-yellow-400"
+                    ? "text-[#c0d4b2]"
+                    : "text-gray-300 hover:text-[#c0d4b2]"
                 }`}
               >
                 {item.name}
@@ -54,7 +54,7 @@ export default function Navbar() {
         {/* CTA Button */}
         <Link
           to="/menu"
-          className="bg-yellow-500 hover:bg-yellow-600 text-black text-sm lg:text-base px-4 lg:px-6 py-2 lg:py-3 rounded transition-colors duration-200 font-semibold"
+          className="bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black text-sm lg:text-base px-4 lg:px-6 py-2 lg:py-3 rounded transition-colors duration-200 font-semibold"
         >
           Order Online
         </Link>
@@ -74,7 +74,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#111111] border-t border-white/10 flex flex-col gap-3 px-4 py-4 md:hidden">
+        <div className="absolute top-full left-0 w-full bg-[#1d384e] border-t border-white/10 flex flex-col gap-3 px-4 py-4 md:hidden">
           {navLinks.map((item) => (
             <Link
               key={item.name}
@@ -82,8 +82,8 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className={`text-sm font-medium transition-colors duration-200 py-2 ${
                 isActive(item.path)
-                  ? "text-yellow-400"
-                  : "text-gray-300 hover:text-yellow-400"
+                  ? "text-[#c0d4b2]"
+                  : "text-gray-300 hover:text-[#c0d4b2]"
               }`}
             >
               {item.name}
@@ -92,7 +92,7 @@ export default function Navbar() {
           <Link
             to="/menu"
             onClick={() => setMenuOpen(false)}
-            className="bg-yellow-400 hover:bg-yellow-300 text-black text-sm font-semibold px-4 py-3 rounded text-center transition-colors duration-200 mt-2"
+            className="bg-[#c0d4b2] hover:bg-[#c0d4b2]-300 text-black text-sm font-semibold px-4 py-3 rounded text-center transition-colors duration-200 mt-2"
           >
             Order Online
           </Link>

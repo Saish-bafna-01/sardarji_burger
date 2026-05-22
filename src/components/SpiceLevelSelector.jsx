@@ -3,7 +3,7 @@ import { FiCheck, FiX } from "react-icons/fi";
 
 const spiceLevels = [
   { id: "mild", name: "Mild", description: "No spice, kid-friendly", color: "bg-green-500", textColor: "text-green-400", borderColor: "border-green-500", bgColor: "bg-green-500/10" },
-  { id: "medium", name: "Medium", description: "Balanced flavor", color: "bg-yellow-500", textColor: "text-yellow-400", borderColor: "border-yellow-500", bgColor: "bg-yellow-500/10" },
+  { id: "medium", name: "Medium", description: "Balanced flavor", color: "bg-[#c0d4b2]", textColor: "text-[#c0d4b2]-300", borderColor: "border-[#c0d4b2]", bgColor: "bg-[#c0d4b2]/10" },
   { id: "hot", name: "Hot", description: "Spicy kick", color: "bg-orange-500", textColor: "text-orange-400", borderColor: "border-orange-500", bgColor: "bg-orange-500/10" },
   { id: "extra-hot", name: "Extra Hot", description: "Maximum heat", color: "bg-red-500", textColor: "text-red-400", borderColor: "border-red-500", bgColor: "bg-red-500/10" },
 ];
@@ -21,7 +21,7 @@ export default function SpiceLevelSelector({ itemName, onConfirm, onCancel }) {
       <div className="flex items-center justify-between mb-3">
         <div>
           <p className="text-white font-semibold text-sm">Select Spice Level</p>
-          <p className="text-yellow-500 text-xs">{itemName}</p>
+          <p className="text-[#c0d4b2] text-xs">{itemName}</p>
         </div>
         <button
           onClick={onCancel}
@@ -64,7 +64,7 @@ export default function SpiceLevelSelector({ itemName, onConfirm, onCancel }) {
         </button>
         <button
           onClick={handleConfirm}
-          className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm"
+          className="flex-1 bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm"
         >
           <FiCheck size={16} />
           Add to Cart

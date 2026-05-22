@@ -50,7 +50,7 @@ export default function AddToCartButton({ item }) {
               </span>
               <button
                 onClick={handleAddClick}
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-yellow-500 hover:bg-yellow-600 text-black rounded-lg transition-all duration-300 flex items-center justify-center active:scale-95"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black rounded-lg transition-all duration-300 flex items-center justify-center active:scale-95"
                 title="Add more"
               >
                 <FiPlus size={16} />
@@ -60,7 +60,7 @@ export default function AddToCartButton({ item }) {
             {/* Cart Button */}
             <button
               onClick={openCart}
-              className="w-9 h-9 sm:w-10 sm:h-10 bg-yellow-500/20 hover:bg-yellow-500/30 border border-yellow-500/50 text-yellow-500 rounded-lg transition-all duration-300 flex items-center justify-center active:scale-95"
+              className="w-9 h-9 sm:w-10 sm:h-10 bg-[#c0d4b2]/20 hover:bg-[#c0d4b2]/30 border border-[#c0d4b2]/50 text-[#c0d4b2] rounded-lg transition-all duration-300 flex items-center justify-center active:scale-95"
               title="View Cart"
             >
               <FiShoppingBag size={16} />
@@ -75,7 +75,7 @@ export default function AddToCartButton({ item }) {
                   key={cartItem.cartId}
                   className={`text-xs px-2 py-0.5 rounded-full capitalize ${
                     cartItem.spiceLevel === 'mild' ? 'bg-green-500/20 text-green-400' :
-                    cartItem.spiceLevel === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                    cartItem.spiceLevel === 'medium' ? 'bg-[#c0d4b2]/20 text-[#c0d4b2]-300' :
                     cartItem.spiceLevel === 'hot' ? 'bg-orange-500/20 text-orange-400' :
                     'bg-red-500/20 text-red-400'
                   }`}
@@ -101,7 +101,7 @@ export default function AddToCartButton({ item }) {
           <div className="flex items-center gap-2 w-full">
             <button
               onClick={handleAddClick}
-              className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
+              className="flex-1 bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black font-semibold py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
             >
               Add to Cart
             </button>

@@ -39,7 +39,7 @@ export default function Footer({
   return (
     <footer className="w-full">
       {/* Newsletter Banner */}
-      <div className="w-full bg-yellow-400 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-8 md:py-10 lg:py-12">
+      <div className="w-full bg-[#c0d4b2] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-8 md:py-10 lg:py-12">
         <div className="mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
           {/* Left text */}
           <div className="flex flex-col gap-1 md:gap-2 text-center md:text-left">
@@ -69,13 +69,13 @@ export default function Footer({
       </div>
 
       {/* Footer Body */}
-      <div className="w-full bg-black px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-10 md:py-14 lg:py-16">
+      <div className="w-full bg-[#1d384e] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-10 md:py-14 lg:py-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-13">
           {/* Col 1 — Brand */}
           <div className="flex flex-col gap-3 md:gap-4 col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-2">
             <Link
               to="/"
-              className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight text-white hover:text-yellow-400 transition-colors"
+              className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight text-white hover:text-[#c0d4b2] transition-colors"
             >
               <img src={logoImg} alt="Sardarji Logo" className="h-30 w-auto" />
             </Link>
@@ -95,7 +95,7 @@ export default function Footer({
                   <li key={item.name}>
                     <Link
                       to={item.path}
-                      className="text-white/70 text-sm sm:text-base hover:text-yellow-400 transition-colors duration-200"
+                      className="text-white/70 text-sm sm:text-base hover:text-[#c0d4b2] transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -115,7 +115,7 @@ export default function Footer({
                 <li key={item}>
                   <Link
                     to="/contact"
-                    className="text-white/70 text-sm sm:text-base hover:text-yellow-400 transition-colors duration-200"
+                    className="text-white/70 text-sm sm:text-base hover:text-[#c0d4b2] transition-colors duration-200"
                   >
                     {item}
                   </Link>
@@ -132,7 +132,7 @@ export default function Footer({
                   <a
                     key={social.name}
                     href={social.href}
-                    className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200"
+                    className="text-[#c0d4b2] hover:text-[#c0d4b2]-300 transition-colors duration-200"
                   >
                     {socialIcons[social.name] || null}
                   </a>
@@ -151,9 +151,9 @@ export default function Footer({
               {contact.phone && (
                 <a
                   href={`tel:+1${contact.phone.replace(/\D/g, "")}`}
-                  className="flex items-center gap-2 text-white/70 text-sm sm:text-base hover:text-yellow-400 transition-colors"
+                  className="flex items-center gap-2 text-white/70 text-sm sm:text-base hover:text-[#c0d4b2] transition-colors"
                 >
-                  <MdOutlinePhoneInTalk className="text-yellow-400" size={18} />
+                  <MdOutlinePhoneInTalk className="text-[#c0d4b2]" size={18} />
                   <span className="text-xs sm:text-sm md:text-base">
                     {contact.phone}
                   </span>
@@ -162,9 +162,9 @@ export default function Footer({
               {contact.email && (
                 <a
                   href={`mailto:${contact.email}`}
-                  className="flex items-center text-white/70 gap-2 text-sm sm:text-base hover:text-yellow-400 transition-colors"
+                  className="flex items-center text-white/70 gap-2 text-sm sm:text-base hover:text-[#c0d4b2] transition-colors"
                 >
-                  <MdOutlineEmail className="text-yellow-400" size={18} />
+                  <MdOutlineEmail className="text-[#c0d4b2]" size={18} />
                   <span className="text-xs sm:text-sm md:text-base break-all">
                     {contact.email}
                   </span>
@@ -179,7 +179,7 @@ export default function Footer({
               {address && (
                 <div className="flex items-start gap-2 text-white/70 text-sm sm:text-base">
                   <MdOutlineLocationOn
-                    className="text-yellow-400 mt-0.5 flex-shrink-0"
+                    className="text-[#c0d4b2] mt-0.5 flex-shrink-0"
                     size={18}
                   />
                   <span className="text-xs sm:text-sm md:text-base">
@@ -198,7 +198,7 @@ export default function Footer({
                   <a
                     key={social.name}
                     href={social.href}
-                    className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200"
+                    className="text-[#c0d4b2] hover:text-[#c0d4b2]-300 transition-colors duration-200"
                   >
                     {socialIcons[social.name] || null}
                   </a>
@@ -210,7 +210,7 @@ export default function Footer({
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full bg-black border-t border-white/10 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-4 md:py-5">
+      <div className="w-full bg-[#1d384e] border-t border-white/10 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 py-4 md:py-5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-white/50 text-xs sm:text-sm text-center md:text-left">
             {copyright}

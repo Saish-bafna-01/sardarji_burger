@@ -2,10 +2,15 @@
 import burgerImg from "../assets/images/burger.png";
 import cheeseburgerImg from "../assets/images/cheeseburger.png";
 import chipsImg from "../assets/images/chips.png";
+import south_india from "../assets/images/south_india.png";
 import juiceImg from "../assets/images/juice.png";
-import drinkImg from "../assets/images/drink.png";
-import burger2Img from "../assets/images/burger2.png";
-import aboutImg from "../assets/images/about.jpg";
+import beverages from "../assets/images/beverages.png";
+import street_food from "../assets/images/street_food.png";
+import north_india from "../assets/images/north_india.png";
+import desserts from "../assets/images/desserts.png";
+import drinkImg from "../assets/images/promo2.png";
+import burger2Img from "../assets/images/promo.png";
+import aboutImg from "../assets/images/about.png";
 import testimonialImg from "../assets/images/testimonial.jpg";
 import offerImg from "../assets/images/offer.jpg";
 import news1Img from "../assets/images/news.jpg";
@@ -56,50 +61,50 @@ export const categoriesData = [
     id: "north-indian",
     title: "North Indian",
     description: "Authentic Punjabi flavors",
-    bg: "bg-yellow-400",
-    textColor: "text-white",
+    bg: "bg-[#d9e9cc]",
+    textColor: "text-black",
     linkColor: "text-black",
-    image: cheeseburgerImg,
+    image: north_india,
     align: "top-3 -left-5",
   },
   {
     id: "south-indian",
     title: "South Indian",
     description: "Crispy dosas & more",
-    bg: "bg-[#1E6B2E]",
-    textColor: "text-white",
-    linkColor: "text-yellow-400",
-    image: chipsImg,
+    bg: "bg-[#f7e1e1]",
+    textColor: "text-black",
+    linkColor: "text-[#c0d4b2]",
+    image: south_india,
     align: "top-3 -left-8",
   },
   {
     id: "street-food",
     title: "Street Food",
     description: "Spicy Indian chaats",
-    bg: "bg-[#C0392B]",
-    textColor: "text-white",
-    linkColor: "text-yellow-400",
-    image: juiceImg,
+    bg: "bg-[#c0d4b2]",
+    textColor: "text-black",
+    linkColor: "text-[#c0d4b2]",
+    image: street_food,
     align: "top-8 -left-12",
   },
   {
     id: "beverages",
     title: "Beverages",
     description: "Refreshing drinks",
-    bg: "bg-[#2980B9]",
-    textColor: "text-white",
-    linkColor: "text-yellow-400",
-    image: drinkImg,
+    bg: "bg-[#d6f2fe]",
+    textColor: "text-black",
+    linkColor: "text-[#c0d4b2]",
+    image: beverages,
     align: "top-3 -left-5",
   },
   {
     id: "desserts",
     title: "Desserts",
     description: "Sweet Indian treats",
-    bg: "bg-[#8E44AD]",
-    textColor: "text-white",
-    linkColor: "text-yellow-400",
-    image: burger2Img,
+    bg: "bg-[#e9dcf6]",
+    textColor: "text-black",
+    linkColor: "text-[#c0d4b2]",
+    image: desserts,
     align: "top-3 -left-8",
   },
 ];

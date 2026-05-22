@@ -1,6 +1,6 @@
 export default function MapSection() {
   return (
-    <section className="w-full bg-[#111111] py-6 px-6 md:px-28">
+    <section className="w-full bg-[#1d384e] py-6 px-6 md:px-28">
       <div className="max-w-7xl mx-auto rounded-2xl overflow-hidden border border-white/10">
         <iframe
           title="Sardarji Fastfood & Mudpot - 2382 23 Ave NW, Edmonton, AB T6T 0R1"

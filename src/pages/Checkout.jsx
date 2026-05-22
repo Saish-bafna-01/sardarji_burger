@@ -189,7 +189,7 @@ export default function Checkout() {
           <p className="text-white/50 mb-8">Add some delicious items to your cart to checkout</p>
           <button
             onClick={() => navigate('/menu')}
-            className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 rounded-lg transition-colors"
+            className="bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black font-bold px-8 py-4 rounded-lg transition-colors"
           >
             Browse Menu
           </button>
@@ -213,22 +213,22 @@ export default function Checkout() {
             <p className="text-white/70 mb-4">
               Your order has been received and scheduled for:
             </p>
-            <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-4 mb-6 inline-block">
-              <p className="text-yellow-500 font-semibold">
+            <div className="bg-[#c0d4b2]/20 border border-[#c0d4b2]/30 rounded-lg p-4 mb-6 inline-block">
+              <p className="text-[#c0d4b2] font-semibold">
                 {formatDate(selectedDate)} at {selectedTime}
               </p>
               <p className="text-white/70 text-sm mt-1">
                 {orderType === 'dine-in' ? 'Dine In' : orderType === 'delivery' ? 'Delivery' : 'Takeout'}
               </p>
             </div>
-            <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-4 mb-6">
-              <p className="text-yellow-500 font-semibold">Your Order Number</p>
+            <div className="bg-[#c0d4b2]/20 border border-[#c0d4b2]/30 rounded-lg p-4 mb-6">
+              <p className="text-[#c0d4b2] font-semibold">Your Order Number</p>
               <p className="text-white text-4xl font-bold">#{Math.floor(Math.random() * 100) + 100}</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleNewOrder}
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 rounded-lg transition-colors"
+                className="bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black font-bold px-8 py-4 rounded-lg transition-colors"
               >
                 Order Again
               </button>
@@ -260,7 +260,7 @@ export default function Checkout() {
           <h1 className="text-white oswald text-3xl sm:text-4xl md:text-5xl font-bold uppercase mb-4">
             Checkout
           </h1>
-          <div className="w-24 h-[3px] bg-yellow-500 rounded-full mx-auto" />
+          <div className="w-24 h-[3px] bg-[#c0d4b2] rounded-full mx-auto" />
         </div>
 
         {/* Progress Steps */}
@@ -268,12 +268,12 @@ export default function Checkout() {
           {[1, 2, 3].map((s) => (
             <div key={s} className="flex items-center">
               <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold text-sm sm:text-base ${
-                step >= s ? 'bg-yellow-500 text-black' : 'bg-white/10 text-white/50'
+                step >= s ? 'bg-[#c0d4b2] text-black' : 'bg-white/10 text-white/50'
               }`}>
                 {s}
               </div>
               {s < 3 && (
-                <div className={`w-8 sm:w-16 h-[2px] ${step > s ? 'bg-yellow-500' : 'bg-white/10'}`} />
+                <div className={`w-8 sm:w-16 h-[2px] ${step > s ? 'bg-[#c0d4b2]' : 'bg-white/10'}`} />
               )}
             </div>
           ))}
@@ -306,17 +306,17 @@ export default function Checkout() {
                       }}
                       className={`p-6 rounded-xl border-2 transition-all duration-300 text-left ${
                         orderType === type.id
-                          ? 'border-yellow-500 bg-yellow-500/10'
+                          ? 'border-[#c0d4b2] bg-[#c0d4b2]/10'
                           : 'border-white/10 hover:border-white/30'
                       }`}
                     >
-                      <type.icon size={32} className={`mb-4 ${orderType === type.id ? 'text-yellow-500' : 'text-white/50'}`} />
-                      <h3 className={`text-lg font-bold mb-2 ${orderType === type.id ? 'text-yellow-500' : 'text-white'}`}>
+                      <type.icon size={32} className={`mb-4 ${orderType === type.id ? 'text-[#c0d4b2]' : 'text-white/50'}`} />
+                      <h3 className={`text-lg font-bold mb-2 ${orderType === type.id ? 'text-[#c0d4b2]' : 'text-white'}`}>
                         {type.title}
                       </h3>
                       <p className="text-white/50 text-sm mb-2">{type.description}</p>
                       {type.fee > 0 && (
-                        <p className="text-yellow-500/70 text-xs">+${type.fee.toFixed(2)} delivery fee</p>
+                        <p className="text-[#c0d4b2]/70 text-xs">+${type.fee.toFixed(2)} delivery fee</p>
                       )}
                     </button>
                   ))}
@@ -329,7 +329,7 @@ export default function Checkout() {
                 <button
                   onClick={handleNextStep}
                   disabled={!orderType}
-                  className="w-full bg-yellow-500 hover:bg-yellow-600 disabled:bg-white/10 disabled:text-white/50 text-black font-bold py-4 rounded-lg transition-colors"
+                  className="w-full bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 disabled:bg-white/10 disabled:text-white/50 text-black font-bold py-4 rounded-lg transition-colors"
                 >
                   Continue to Details
                 </button>
@@ -347,7 +347,7 @@ export default function Checkout() {
                   {/* Name */}
                   <div>
                     <label className="text-white font-semibold mb-2 block flex items-center gap-2">
-                      <FiUser className="text-yellow-500" size={16} />
+                      <FiUser className="text-[#c0d4b2]" size={16} />
                       Full Name *
                     </label>
                     <input
@@ -357,7 +357,7 @@ export default function Checkout() {
                       onChange={handleInputChange}
                       placeholder="Enter your name"
                       className={`w-full bg-[#111111] text-white px-4 py-3 rounded-lg border ${
-                        errors.name ? 'border-red-500' : 'border-white/10 focus:border-yellow-500'
+                        errors.name ? 'border-red-500' : 'border-white/10 focus:border-[#c0d4b2]'
                       } outline-none transition-colors`}
                     />
                     {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
@@ -366,7 +366,7 @@ export default function Checkout() {
                   {/* Phone */}
                   <div>
                     <label className="text-white font-semibold mb-2 block flex items-center gap-2">
-                      <FiPhone className="text-yellow-500" size={16} />
+                      <FiPhone className="text-[#c0d4b2]" size={16} />
                       Phone Number *
                     </label>
                     <input
@@ -376,7 +376,7 @@ export default function Checkout() {
                       onChange={handleInputChange}
                       placeholder="(XXX) XXX-XXXX"
                       className={`w-full bg-[#111111] text-white px-4 py-3 rounded-lg border ${
-                        errors.phone ? 'border-red-500' : 'border-white/10 focus:border-yellow-500'
+                        errors.phone ? 'border-red-500' : 'border-white/10 focus:border-[#c0d4b2]'
                       } outline-none transition-colors`}
                     />
                     {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
@@ -385,7 +385,7 @@ export default function Checkout() {
                   {/* Email */}
                   <div>
                     <label className="text-white font-semibold mb-2 block flex items-center gap-2">
-                      <FiMail className="text-yellow-500" size={16} />
+                      <FiMail className="text-[#c0d4b2]" size={16} />
                       Email (Optional)
                     </label>
                     <input
@@ -394,7 +394,7 @@ export default function Checkout() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="your@email.com"
-                      className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-yellow-500 outline-none transition-colors"
+                      className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-[#c0d4b2] outline-none transition-colors"
                     />
                   </div>
 
@@ -403,7 +403,7 @@ export default function Checkout() {
                     <>
                       <div>
                         <label className="text-white font-semibold mb-2 block flex items-center gap-2">
-                          <FiMapPin className="text-yellow-500" size={16} />
+                          <FiMapPin className="text-[#c0d4b2]" size={16} />
                           Street Address *
                         </label>
                         <input
@@ -413,7 +413,7 @@ export default function Checkout() {
                           onChange={handleInputChange}
                           placeholder="Enter your address"
                           className={`w-full bg-[#111111] text-white px-4 py-3 rounded-lg border ${
-                            errors.address ? 'border-red-500' : 'border-white/10 focus:border-yellow-500'
+                            errors.address ? 'border-red-500' : 'border-white/10 focus:border-[#c0d4b2]'
                           } outline-none transition-colors`}
                         />
                         {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address}</p>}
@@ -428,7 +428,7 @@ export default function Checkout() {
                             value={formData.apartment}
                             onChange={handleInputChange}
                             placeholder="Apt #"
-                            className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-yellow-500 outline-none transition-colors"
+                            className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-[#c0d4b2] outline-none transition-colors"
                           />
                         </div>
                         <div>
@@ -440,7 +440,7 @@ export default function Checkout() {
                             onChange={handleInputChange}
                             placeholder="Edmonton"
                             className={`w-full bg-[#111111] text-white px-4 py-3 rounded-lg border ${
-                              errors.city ? 'border-red-500' : 'border-white/10 focus:border-yellow-500'
+                              errors.city ? 'border-red-500' : 'border-white/10 focus:border-[#c0d4b2]'
                             } outline-none transition-colors`}
                           />
                           {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city}</p>}
@@ -452,7 +452,7 @@ export default function Checkout() {
                   {/* Schedule Section */}
                   <div className="border-t border-white/10 pt-4 mt-4">
                     <h3 className="text-white font-bold mb-4 flex items-center gap-2">
-                      <FiClock className="text-yellow-500" />
+                      <FiClock className="text-[#c0d4b2]" />
                       Schedule Your Order
                     </h3>
 
@@ -462,13 +462,13 @@ export default function Checkout() {
                       <div className="relative">
                         <button
                           onClick={() => setShowCalendar(!showCalendar)}
-                          className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-yellow-500 outline-none transition-colors text-left flex items-center justify-between"
+                          className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-[#c0d4b2] outline-none transition-colors text-left flex items-center justify-between"
                         >
                           <span className="flex items-center gap-2">
-                            <FiCalendar className="text-yellow-500" />
+                            <FiCalendar className="text-[#c0d4b2]" />
                             {formatDate(selectedDate)}
                           </span>
-                          <span className="text-yellow-500">Change</span>
+                          <span className="text-[#c0d4b2]">Change</span>
                         </button>
 
                         {showCalendar && (
@@ -522,11 +522,11 @@ export default function Checkout() {
                                     disabled={isPast}
                                     className={`h-10 rounded-lg text-sm font-medium transition-all ${
                                       isSelected
-                                        ? 'bg-yellow-500 text-black'
+                                        ? 'bg-[#c0d4b2] text-black'
                                         : isPast
                                         ? 'text-white/20 cursor-not-allowed'
                                         : isTodayDate
-                                        ? 'text-yellow-500 hover:bg-yellow-500/20'
+                                        ? 'text-[#c0d4b2] hover:bg-[#c0d4b2]/20'
                                         : 'text-white hover:bg-white/10'
                                     }`}
                                   >
@@ -546,13 +546,13 @@ export default function Checkout() {
                       <div className="relative">
                         <button
                           onClick={() => setShowTimePicker(!showTimePicker)}
-                          className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-yellow-500 outline-none transition-colors text-left flex items-center justify-between"
+                          className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-[#c0d4b2] outline-none transition-colors text-left flex items-center justify-between"
                         >
                           <span className="flex items-center gap-2">
-                            <FiClock className="text-yellow-500" />
+                            <FiClock className="text-[#c0d4b2]" />
                             {selectedTime || 'Select a time'}
                           </span>
-                          <span className="text-yellow-500">Choose</span>
+                          <span className="text-[#c0d4b2]">Choose</span>
                         </button>
 
                         {showTimePicker && (
@@ -567,7 +567,7 @@ export default function Checkout() {
                                   }}
                                   className={`px-3 py-2 rounded-lg text-sm transition-all ${
                                     selectedTime === time
-                                      ? 'bg-yellow-500 text-black font-semibold'
+                                      ? 'bg-[#c0d4b2] text-black font-semibold'
                                       : 'bg-white/10 text-white hover:bg-white/20'
                                   }`}
                                 >
@@ -591,7 +591,7 @@ export default function Checkout() {
                       onChange={handleInputChange}
                       placeholder="Any special requests or dietary requirements?"
                       rows={3}
-                      className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-yellow-500 outline-none transition-colors resize-none"
+                      className="w-full bg-[#111111] text-white px-4 py-3 rounded-lg border border-white/10 focus:border-[#c0d4b2] outline-none transition-colors resize-none"
                     />
                   </div>
                 </div>
@@ -605,7 +605,7 @@ export default function Checkout() {
                   </button>
                   <button
                     onClick={handleNextStep}
-                    className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 rounded-lg transition-colors"
+                    className="flex-1 bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black font-bold py-4 rounded-lg transition-colors"
                   >
                     Continue to Payment
                   </button>
@@ -627,11 +627,11 @@ export default function Checkout() {
                       onClick={() => setPaymentMethod(method.id)}
                       className={`w-full p-4 rounded-xl border-2 transition-all text-left ${
                         paymentMethod === method.id
-                          ? 'border-yellow-500 bg-yellow-500/10'
+                          ? 'border-[#c0d4b2] bg-[#c0d4b2]/10'
                           : 'border-white/10 hover:border-white/30'
                       }`}
                     >
-                      <span className={paymentMethod === method.id ? 'text-yellow-500' : 'text-white'}>
+                      <span className={paymentMethod === method.id ? 'text-[#c0d4b2]' : 'text-white'}>
                         {method.title}
                       </span>
                     </button>
@@ -677,7 +677,7 @@ export default function Checkout() {
                   <button
                     onClick={handlePlaceOrder}
                     disabled={isSubmitting}
-                    className="flex-1 bg-yellow-500 hover:bg-yellow-600 disabled:bg-yellow-500/50 text-black font-bold py-4 rounded-lg transition-colors flex items-center justify-center gap-2"
+                    className="flex-1 bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 disabled:bg-[#c0d4b2]/50 text-black font-bold py-4 rounded-lg transition-colors flex items-center justify-center gap-2"
                   >
                     {isSubmitting ? (
                       <>
@@ -697,7 +697,7 @@ export default function Checkout() {
           <div className="lg:col-span-1">
             <div className="bg-[#1c1c1c] rounded-2xl p-4 sm:p-6 sticky top-24">
               <h3 className="text-white oswald text-lg font-bold uppercase mb-4 flex items-center gap-2">
-                <FiShoppingBag className="text-yellow-500" />
+                <FiShoppingBag className="text-[#c0d4b2]" />
                 Your Order ({cartItems.length})
               </h3>
 
@@ -713,10 +713,10 @@ export default function Checkout() {
                     <div className="flex-1 min-w-0">
                       <p className="text-white text-sm font-semibold line-clamp-1">{item.name}</p>
                       <div className="flex items-center gap-2">
-                        <p className="text-yellow-500 text-sm">{item.price}</p>
+                        <p className="text-[#c0d4b2] text-sm">{item.price}</p>
                         <span className={`text-xs px-1.5 py-0.5 rounded capitalize ${
                           item.spiceLevel === 'mild' ? 'bg-green-500/20 text-green-400' :
-                          item.spiceLevel === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                          item.spiceLevel === 'medium' ? 'bg-[#c0d4b2]/20 text-[#c0d4b2]-300' :
                           item.spiceLevel === 'hot' ? 'bg-orange-500/20 text-orange-400' :
                           'bg-red-500/20 text-red-400'
                         }`}>
@@ -734,7 +734,7 @@ export default function Checkout() {
                       <span className="text-white text-sm w-6 text-center">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.cartId, item.quantity + 1)}
-                        className="w-6 h-6 rounded bg-yellow-500 hover:bg-yellow-600 text-black flex items-center justify-center"
+                        className="w-6 h-6 rounded bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black flex items-center justify-center"
                       >
                         <FiPlus size={12} />
                       </button>
@@ -761,7 +761,7 @@ export default function Checkout() {
                 )}
                 <div className="flex justify-between text-white font-bold text-lg pt-2 border-t border-white/10">
                   <span>Total</span>
-                  <span className="text-yellow-500">${grandTotal.toFixed(2)}</span>
+                  <span className="text-[#c0d4b2]">${grandTotal.toFixed(2)}</span>
                 </div>
               </div>
             </div>

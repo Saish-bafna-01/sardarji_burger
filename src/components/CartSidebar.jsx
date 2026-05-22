@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const spiceLevelColors = {
   mild: 'bg-green-500/20 text-green-400',
-  medium: 'bg-yellow-500/20 text-yellow-400',
+  medium: 'bg-[#c0d4b2]/20 text-[#c0d4b2]-300',
   hot: 'bg-orange-500/20 text-orange-400',
   'extra-hot': 'bg-red-500/20 text-red-400',
 };
@@ -24,13 +24,13 @@ export default function CartSidebar() {
       />
 
       {/* Sidebar */}
-      <div className="fixed right-0 top-0 h-full w-full sm:w-[400px] bg-[#111111] z-50 shadow-2xl transform transition-transform duration-300 flex flex-col">
+      <div className="fixed right-0 top-0 h-full w-full sm:w-[400px] bg-[#1d384e] z-50 shadow-2xl transform transition-transform duration-300 flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10">
           <h2 className="text-white oswald text-xl sm:text-2xl font-bold uppercase flex items-center gap-2">
-            <FiShoppingBag className="text-yellow-500" />
+            <FiShoppingBag className="text-[#c0d4b2]" />
             Your Cart
-            <span className="text-yellow-500 text-base">({cartItems.length})</span>
+            <span className="text-[#c0d4b2] text-base">({cartItems.length})</span>
           </h2>
           <button
             onClick={closeCart}
@@ -49,7 +49,7 @@ export default function CartSidebar() {
               <p className="text-white/30 text-sm mb-6">Add some delicious items to get started!</p>
               <button
                 onClick={closeCart}
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-lg transition-colors"
+                className="bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black font-semibold px-6 py-3 rounded-lg transition-colors"
               >
                 Browse Menu
               </button>
@@ -81,7 +81,7 @@ export default function CartSidebar() {
                         {item.spiceLevel.replace('-', ' ')}
                       </span>
                     )}
-                    <p className="text-yellow-500 font-bold text-sm sm:text-base mt-1">
+                    <p className="text-[#c0d4b2] font-bold text-sm sm:text-base mt-1">
                       {item.price}
                     </p>
 
@@ -98,7 +98,7 @@ export default function CartSidebar() {
                       </span>
                       <button
                         onClick={() => updateQuantity(item.cartId, item.quantity + 1)}
-                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-yellow-500 hover:bg-yellow-600 text-black flex items-center justify-center transition-colors"
+                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black flex items-center justify-center transition-colors"
                       >
                         <FiPlus size={14} />
                       </button>
@@ -135,7 +135,7 @@ export default function CartSidebar() {
               <Link
                 to="/checkout"
                 onClick={closeCart}
-                className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 sm:py-4 rounded-lg transition-colors block text-center"
+                className="w-full bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black font-bold py-3 sm:py-4 rounded-lg transition-colors block text-center"
               >
                 Proceed to Checkout
               </Link>

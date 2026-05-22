@@ -12,15 +12,15 @@ const NotFound = () => {
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-yellow-500 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-yellow-400 rounded-full blur-3xl animate-pulse animation-delay-500" />
+          <div className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-[#c0d4b2] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-[#c0d4b2]-300 rounded-full blur-3xl animate-pulse animation-delay-500" />
         </div>
 
         {/* Content */}
         <div className="relative z-10 text-center max-w-2xl mx-auto">
           {/* 404 Number */}
           <div className="mb-4 sm:mb-6">
-            <span className="text-[120px] sm:text-[180px] md:text-[240px] lg:text-[280px] font-black text-yellow-500/20 oswald leading-none select-none">
+            <span className="text-[120px] sm:text-[180px] md:text-[240px] lg:text-[280px] font-black text-[#c0d4b2]/20 oswald leading-none select-none">
               404
             </span>
           </div>
@@ -31,7 +31,7 @@ const NotFound = () => {
           </h1>
 
           {/* Yellow Divider */}
-          <div className="w-20 sm:w-24 h-1 bg-yellow-500 rounded-full mx-auto mb-4 sm:mb-6" />
+          <div className="w-20 sm:w-24 h-1 bg-[#c0d4b2] rounded-full mx-auto mb-4 sm:mb-6" />
 
           {/* Description */}
           <p className="text-white/70 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-md sm:max-w-lg mx-auto">
@@ -42,13 +42,13 @@ const NotFound = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link
               to="/"
-              className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/30 text-sm sm:text-base"
+              className="bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#c0d4b2]/30 text-sm sm:text-base"
             >
               Go to Homepage
             </Link>
             <Link
               to="/menu"
-              className="bg-transparent border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded transition-all duration-300 hover:scale-105 text-sm sm:text-base"
+              className="bg-transparent border-2 border-[#c0d4b2] text-[#c0d4b2] hover:bg-[#c0d4b2] hover:text-black font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded transition-all duration-300 hover:scale-105 text-sm sm:text-base"
             >
               View Our Menu
             </Link>
@@ -56,15 +56,15 @@ const NotFound = () => {
 
           {/* Additional Links */}
           <div className="mt-8 sm:mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white/60 text-sm sm:text-base">
-            <Link to="/about" className="hover:text-yellow-500 transition-colors">
+            <Link to="/about" className="hover:text-[#c0d4b2] transition-colors">
               About Us
             </Link>
             <span className="text-white/30">|</span>
-            <Link to="/blog" className="hover:text-yellow-500 transition-colors">
+            <Link to="/blog" className="hover:text-[#c0d4b2] transition-colors">
               Blog
             </Link>
             <span className="text-white/30">|</span>
-            <Link to="/contact" className="hover:text-yellow-500 transition-colors">
+            <Link to="/contact" className="hover:text-[#c0d4b2] transition-colors">
               Contact
             </Link>
           </div>
@@ -83,7 +83,7 @@ const NotFound = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
             <a
               href="tel:+18259657973"
-              className="flex items-center gap-2 text-yellow-500 hover:text-yellow-400 transition-colors text-sm sm:text-base"
+              className="flex items-center gap-2 text-[#c0d4b2] hover:text-[#c0d4b2]-300 transition-colors text-sm sm:text-base"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -92,7 +92,7 @@ const NotFound = () => {
             </a>
             <a
               href="mailto:info@sardarjifastfood.com"
-              className="flex items-center gap-2 text-yellow-500 hover:text-yellow-400 transition-colors text-sm sm:text-base"
+              className="flex items-center gap-2 text-[#c0d4b2] hover:text-[#c0d4b2]-300 transition-colors text-sm sm:text-base"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />

@@ -21,7 +21,7 @@ const BlogDetail = () => {
       <div className="min-h-screen bg-[#111111] flex items-center justify-center px-4">
         <div className="text-center">
           <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Blog Not Found</h1>
-          <Link to="/blog" className="text-yellow-500 hover:underline text-sm md:text-base">
+          <Link to="/blog" className="text-[#c0d4b2] hover:underline text-sm md:text-base">
             ← Back to Blog
           </Link>
         </div>
@@ -55,15 +55,15 @@ const BlogDetail = () => {
         <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 py-12 sm:py-16 md:py-20 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto">
           {/* Breadcrumb */}
           <div className="flex items-center gap-1 sm:gap-2 text-white/60 text-[10px] sm:text-xs md:text-sm mb-4 md:mb-6 flex-wrap justify-center">
-            <Link to="/" className="hover:text-yellow-500 transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#c0d4b2] transition-colors">Home</Link>
             <span>/</span>
-            <Link to="/blog" className="hover:text-yellow-500 transition-colors">Blog</Link>
+            <Link to="/blog" className="hover:text-[#c0d4b2] transition-colors">Blog</Link>
             <span>/</span>
-            <span className="text-yellow-500">{blog.category}</span>
+            <span className="text-[#c0d4b2]">{blog.category}</span>
           </div>
 
           {/* Category Badge */}
-          <span className="bg-yellow-500 text-black text-[10px] sm:text-xs md:text-sm font-semibold px-3 sm:px-4 py-1 rounded-full uppercase mb-4 md:mb-6">
+          <span className="bg-[#c0d4b2] text-black text-[10px] sm:text-xs md:text-sm font-semibold px-3 sm:px-4 py-1 rounded-full uppercase mb-4 md:mb-6">
             {blog.category}
           </span>
 
@@ -75,11 +75,11 @@ const BlogDetail = () => {
           {/* Meta Info */}
           <div className="flex items-center gap-4 sm:gap-6 text-white/70 text-xs sm:text-sm md:text-base flex-wrap justify-center">
             <div className="flex items-center gap-2">
-              <FiUser size={14} className="text-yellow-500" />
+              <FiUser size={14} className="text-[#c0d4b2]" />
               <span>Sardarji Team</span>
             </div>
             <div className="flex items-center gap-2">
-              <FiCalendar size={14} className="text-yellow-500" />
+              <FiCalendar size={14} className="text-[#c0d4b2]" />
               <span>{blog.date}</span>
             </div>
           </div>
@@ -114,12 +114,12 @@ const BlogDetail = () => {
             </article>
 
             {/* Quote Box */}
-            <div className="bg-[#1c1c1c] border-l-4 border-yellow-500 rounded-r-lg md:rounded-r-xl p-4 sm:p-5 md:p-6 my-6 md:my-10">
-              <FaQuoteLeft size={24} className="text-yellow-500 mb-3 md:mb-4" />
+            <div className="bg-[#1c1c1c] border-l-4 border-[#c0d4b2] rounded-r-lg md:rounded-r-xl p-4 sm:p-5 md:p-6 my-6 md:my-10">
+              <FaQuoteLeft size={24} className="text-[#c0d4b2] mb-3 md:mb-4" />
               <p className="text-white text-base sm:text-lg md:text-xl italic leading-relaxed">
                 "Authentic Indian flavors, freshly prepared with love and tradition."
               </p>
-              <p className="text-yellow-500 font-semibold text-sm md:text-base mt-2 md:mt-3">— Sardarji Fastfood & Mudpot</p>
+              <p className="text-[#c0d4b2] font-semibold text-sm md:text-base mt-2 md:mt-3">— Sardarji Fastfood & Mudpot</p>
             </div>
 
             {/* Tags */}
@@ -128,7 +128,7 @@ const BlogDetail = () => {
               {['Indian Food', blog.category, 'Edmonton', 'Authentic Cuisine'].map((tag) => (
                 <span
                   key={tag}
-                  className="bg-white/10 text-white/80 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors cursor-pointer"
+                  className="bg-white/10 text-white/80 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-[#c0d4b2] hover:text-black transition-colors cursor-pointer"
                 >
                   {tag}
                 </span>
@@ -178,14 +178,14 @@ const BlogDetail = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 mt-6 md:mt-10 pt-6 md:pt-8 border-t border-white/10">
               <Link
                 to="/blog"
-                className="flex items-center gap-2 text-yellow-500 hover:text-yellow-400 transition-colors text-sm md:text-base font-semibold order-2 sm:order-1"
+                className="flex items-center gap-2 text-[#c0d4b2] hover:text-[#c0d4b2]-300 transition-colors text-sm md:text-base font-semibold order-2 sm:order-1"
               >
                 <FiArrowLeft size={16} />
                 Back to Blog
               </Link>
               <a
                 href="/menu"
-                className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/30 text-sm md:text-base order-1 sm:order-2"
+                className="bg-[#c0d4b2] hover:bg-[#c0d4b2]-300 text-black font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#c0d4b2]/30 text-sm md:text-base order-1 sm:order-2"
               >
                 View Our Menu
               </a>
@@ -212,7 +212,7 @@ const BlogDetail = () => {
                       className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-lg flex-shrink-0"
                     />
                     <div>
-                      <h4 className="text-white font-semibold text-xs sm:text-sm leading-snug group-hover:text-yellow-500 transition-colors line-clamp-2">
+                      <h4 className="text-white font-semibold text-xs sm:text-sm leading-snug group-hover:text-[#c0d4b2] transition-colors line-clamp-2">
                         {relatedBlog.title}
                       </h4>
                       <span className="text-white/50 text-[10px] sm:text-xs">{relatedBlog.category}</span>
@@ -233,7 +233,7 @@ const BlogDetail = () => {
                     key={category}
                     to="/menu"
                     state={{ category }}
-                    className="flex items-center justify-between text-white/70 hover:text-yellow-500 transition-all duration-300 py-2 border-b border-white/10 last:border-0 text-sm md:text-base group"
+                    className="flex items-center justify-between text-white/70 hover:text-[#c0d4b2] transition-all duration-300 py-2 border-b border-white/10 last:border-0 text-sm md:text-base group"
                   >
                     <span>{category}</span>
                     <FiArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -243,7 +243,7 @@ const BlogDetail = () => {
             </div>
 
             {/* CTA Box */}
-            <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 text-center">
+            <div className="bg-gradient-to-br from-[#c0d4b2] to-[#c0d4b2]-600 rounded-xl md:rounded-2xl p-4 sm:p-5 md:p-6 text-center">
               <h3 className="text-black oswald text-lg md:text-xl font-bold uppercase mb-2 md:mb-3">
                 Hungry? Order Now!
               </h3>

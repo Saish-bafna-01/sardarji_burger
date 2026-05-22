@@ -1,5 +1,5 @@
 // Menu Page Data
-import menuHeroBg from "../assets/images/about_bg.jpg";
+import menuHeroBg from "../assets/images/menu.jpg";
 
 // Beverages
 import chai from "../assets/images/Chai.png";

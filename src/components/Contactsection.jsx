@@ -3,10 +3,10 @@ import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaPinterest } from "reac
 import { TbMap2, TbPhone, TbSend, TbClock } from "react-icons/tb";
 
 const iconMap = {
-  map: <TbMap2 size={30} className="text-yellow-500" />,
-  email: <TbSend size={30} className="text-yellow-500" />,
-  phone: <TbPhone size={30} className="text-yellow-500" />,
-  clock: <TbClock size={30} className="text-yellow-500" />,
+  map: <TbMap2 size={30} className="text-[#c0d4b2]" />,
+  email: <TbSend size={30} className="text-[#c0d4b2]" />,
+  phone: <TbPhone size={30} className="text-[#c0d4b2]" />,
+  clock: <TbClock size={30} className="text-[#c0d4b2]" />,
 };
 
 const socialIconMap = {
@@ -67,7 +67,7 @@ export default function ContactSection({
   const displayFormFields = formFields.length > 0 ? formFields : defaultFormFields;
 
   return (
-    <section className="w-full bg-[#111111] py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28">
+    <section className="w-full bg-[#1d384e] py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
 
         {/* ── Left ── */}
@@ -78,7 +78,7 @@ export default function ContactSection({
             <h2 className="text-white oswald text-3xl sm:text-4xl md:text-5xl font-bold uppercase">
               {heading}
             </h2>
-            <div className="w-16 md:w-20 h-[3px] bg-yellow-500 rounded-full mx-auto lg:mx-0" />
+            <div className="w-16 md:w-20 h-[3px] bg-[#c0d4b2] rounded-full mx-auto lg:mx-0" />
             {description && (
               <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed mt-2 max-w-lg mx-auto lg:mx-0">
                 {description}
@@ -118,7 +118,7 @@ export default function ContactSection({
                 <a
                   key={social.name}
                   href={social.href}
-                  className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200"
+                  className="text-[#c0d4b2] hover:text-[#c0d4b2]-300 transition-colors duration-200"
                 >
                   {socialIconMap[social.name] || null}
                 </a>
@@ -140,7 +140,7 @@ export default function ContactSection({
               {displayFormFields.slice(0, 2).map((field) => (
                 <div key={field.name} className="flex flex-col gap-2">
                   <label className="text-white text-xs sm:text-sm font-semibold">
-                    {field.label} {field.required && <span className="text-yellow-500">*</span>}
+                    {field.label} {field.required && <span className="text-[#c0d4b2]">*</span>}
                   </label>
                   <input
                     type={field.type}
@@ -149,7 +149,7 @@ export default function ContactSection({
                     value={form[field.name] || ""}
                     onChange={handleChange}
                     required={field.required}
-                    className="bg-[#1c1c1c] text-white/70 text-sm sm:text-base px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg outline-none border border-white/10 focus:border-yellow-500 transition-colors duration-200 placeholder-white/30"
+                    className="bg-[#1c1c1c] text-white/70 text-sm sm:text-base px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg outline-none border border-white/10 focus:border-[#c0d4b2] transition-colors duration-200 placeholder-white/30"
                   />
                 </div>
               ))}
@@ -159,7 +159,7 @@ export default function ContactSection({
             {displayFormFields.slice(2).map((field) => (
               <div key={field.name} className="flex flex-col gap-2">
                 <label className="text-white text-xs sm:text-sm font-semibold">
-                  {field.label} {field.required && <span className="text-yellow-500">*</span>}
+                  {field.label} {field.required && <span className="text-[#c0d4b2]">*</span>}
                 </label>
                 {field.type === "textarea" ? (
                   <textarea
@@ -169,7 +169,7 @@ export default function ContactSection({
                     value={form[field.name] || ""}
                     onChange={handleChange}
                     required={field.required}
-                    className="bg-[#1c1c1c] text-white/70 text-sm sm:text-base px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg outline-none border border-white/10 focus:border-yellow-500 transition-colors duration-200 placeholder-white/30 resize-y"
+                    className="bg-[#1c1c1c] text-white/70 text-sm sm:text-base px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg outline-none border border-white/10 focus:border-[#c0d4b2] transition-colors duration-200 placeholder-white/30 resize-y"
                   />
                 ) : (
                   <input
@@ -179,7 +179,7 @@ export default function ContactSection({
                     value={form[field.name] || ""}
                     onChange={handleChange}
                     required={field.required}
-                    className="bg-[#1c1c1c] text-white/70 text-sm sm:text-base px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg outline-none border border-white/10 focus:border-yellow-500 transition-colors duration-200 placeholder-white/30"
+                    className="bg-[#1c1c1c] text-white/70 text-sm sm:text-base px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg outline-none border border-white/10 focus:border-[#c0d4b2] transition-colors duration-200 placeholder-white/30"
                   />
                 )}
               </div>
@@ -195,7 +195,7 @@ export default function ContactSection({
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-yellow-500 hover:bg-yellow-400 text-black oswald text-base md:text-lg font-bold uppercase px-6 md:px-8 py-3 md:py-4 rounded-lg transition-colors duration-200 w-full md:w-auto md:self-start"
+              className="bg-[#c0d4b2] hover:bg-[#c0d4b2]-300 text-black oswald text-base md:text-lg font-bold uppercase px-6 md:px-8 py-3 md:py-4 rounded-lg transition-colors duration-200 w-full md:w-auto md:self-start"
             >
               {submitText}
             </button>

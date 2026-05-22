@@ -9,7 +9,7 @@ export default function AboutSection({
   ctaLink = "#",
 }) {
   return (
-    <section className="w-full bg-[#111111] py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#1d384e] py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
         {/* Left — Image */}
         <div className="rounded-xl md:rounded-2xl overflow-hidden w-full aspect-[4/3] md:aspect-[4.5/3] group animate-slide-in-left">
@@ -30,7 +30,7 @@ export default function AboutSection({
           </h2>
 
           {/* Yellow divider */}
-          <div className="w-16 md:w-20 h-[3px] bg-yellow-400 rounded-full mx-auto lg:mx-0 animate-scale-x" />
+          <div className="w-16 md:w-20 h-[3px] bg-[#c0d4b2] rounded-full mx-auto lg:mx-0 animate-scale-x" />
 
           {/* Description */}
           <p className="text-white/80 text-base md:text-lg leading-relaxed transition-colors duration-300 hover:text-white">
@@ -42,7 +42,7 @@ export default function AboutSection({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-3">
               {features.map((item, index) => (
                 <div key={item} className="flex items-center gap-2 justify-center sm:justify-start transition-all duration-300 hover:translate-x-2 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
-                  <BsCheckLg className="text-yellow-400 font-extrabold flex-shrink-0 transition-transform duration-300 hover:scale-125" size={18} />
+                  <BsCheckLg className="text-[#c0d4b2] font-extrabold flex-shrink-0 transition-transform duration-300 hover:scale-125" size={18} />
                   <span className="text-white text-sm md:text-base lg:text-lg font-medium">{item}</span>
                 </div>
               ))}
@@ -54,7 +54,7 @@ export default function AboutSection({
             <div className="mt-2">
               <a
                 href={ctaLink}
-                className="inline-block bg-yellow-500 hover:bg-yellow-600 text-black text-sm md:text-base font-semibold px-6 md:px-8 py-3 md:py-4 rounded transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/30"
+                className="inline-block bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black text-sm md:text-base font-semibold px-6 md:px-8 py-3 md:py-4 rounded transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#c0d4b2]/30"
               >
                 {ctaText}
               </a>

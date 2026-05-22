@@ -1,5 +1,5 @@
 // Blog Page Data
-import blogHeroBg from "../assets/images/about_bg.jpg";
+import blogHeroBg from "../assets/images/blog.jpg";
 import masalaDosaImg from "../assets/images/Masala Dosa.png";
 import alooParanthaImg from "../assets/images/Desi Ghee Aloo Parantha.png";
 import mangoLassiImg from "../assets/images/Mango Lassi.png";

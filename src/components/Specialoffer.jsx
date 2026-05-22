@@ -15,8 +15,8 @@ export default function SpecialOffer({
 
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-500 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-400 rounded-full blur-3xl animate-pulse animation-delay-500" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#c0d4b2] rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#c0d4b2] rounded-full blur-3xl animate-pulse animation-delay-500" />
       </div>
 
       {/* Content — left aligned */}
@@ -27,7 +27,7 @@ export default function SpecialOffer({
         </h2>
 
         {/* Yellow divider */}
-        <div className="w-16 sm:w-20 md:w-20 h-[3px] bg-yellow-400 rounded-full animate-scale-x" />
+        <div className="w-16 sm:w-20 md:w-20 h-[3px] bg-[#c0d4b2] rounded-full animate-scale-x" />
 
         {/* Description */}
         <p className="text-gray-300 max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed animate-fade-in-up animation-delay-200">
@@ -39,7 +39,7 @@ export default function SpecialOffer({
           <div className="mt-2 md:mt-3 animate-fade-in-up animation-delay-400">
             <a
               href={ctaLink}
-              className="inline-block bg-yellow-500 hover:bg-yellow-600 text-black text-sm md:text-base lg:text-lg font-semibold px-8 md:px-10 lg:px-12 py-3 md:py-4 rounded transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/30"
+              className="inline-block bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black text-sm md:text-base lg:text-lg font-semibold px-8 md:px-10 lg:px-12 py-3 md:py-4 rounded transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#c0d4b2]/30"
             >
               {ctaText}
             </a>

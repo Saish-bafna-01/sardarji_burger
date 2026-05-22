@@ -1,5 +1,5 @@
 // Contact Page Data
-import contactHeroBg from "../assets/images/about_bg.jpg";
+import contactHeroBg from "../assets/images/contact.jpg";
 
 // Contact Hero Data
 export const contactHeroData = {

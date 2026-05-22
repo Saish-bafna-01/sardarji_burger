@@ -14,7 +14,7 @@ export default function VideoSection({
 
   return (
     <>
-      <section className="w-full bg-[#111111]">
+      <section className="w-full bg-[#1d384e]">
         <div className="mx-auto">
           {/* Container */}
           <div className="relative w-full overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center">
@@ -36,7 +36,7 @@ export default function VideoSection({
               {/* Play Button */}
               <button
                 onClick={() => setModalOpen(true)}
-                className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 rounded-full bg-yellow-400 hover:bg-yellow-300 flex items-center justify-center transition-colors duration-200 mb-1 md:mb-2"
+                className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 rounded-full bg-[#c0d4b2] hover:bg-[#c0d4b2]-300 flex items-center justify-center transition-colors duration-200 mb-1 md:mb-2"
                 aria-label="Play video"
               >
                 <BsFillPlayFill size={50} className="text-white ml-0.5" />
@@ -48,7 +48,7 @@ export default function VideoSection({
               </h2>
 
               {/* Yellow divider */}
-              <div className="w-24 md:w-32 lg:w-40 h-[3px] bg-yellow-400 rounded-full" />
+              <div className="w-24 md:w-32 lg:w-40 h-[3px] bg-[#c0d4b2] rounded-full" />
 
               {/* Description */}
               <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
@@ -63,7 +63,7 @@ export default function VideoSection({
                       key={item}
                       className="flex items-center gap-1.5 sm:gap-2 bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full"
                     >
-                      <BsCheckLg className="text-yellow-400" size={12} />
+                      <BsCheckLg className="text-[#c0d4b2]" size={12} />
                       <span className="text-white text-xs sm:text-sm font-medium">
                         {item}
                       </span>
@@ -76,7 +76,7 @@ export default function VideoSection({
               {phone && (
                 <a
                   href={`tel:+1${phone.replace(/\D/g, "")}`}
-                  className="mt-3 md:mt-4 flex items-center gap-2 sm:gap-3 bg-yellow-500 hover:bg-yellow-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-colors duration-200"
+                  className="mt-3 md:mt-4 flex items-center gap-2 sm:gap-3 bg-[#c0d4b2] hover:bg-[#c0d4b2]-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-colors duration-200"
                 >
                   <FiPhone size={20} />
                   <span className="font-bold text-sm sm:text-base md:text-lg">
