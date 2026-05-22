@@ -61,7 +61,7 @@ export const categoriesData = [
     id: "north-indian",
     title: "North Indian",
     description: "Authentic Punjabi flavors",
-    bg: "bg-[#d9e9cc]",
+    bg: "bg-[#f4dd84]",
     textColor: "text-black",
     linkColor: "text-black",
     image: north_india,

@@ -21,7 +21,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-[#1d384e] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-40 py-2 md:py-4 lg:py-6 flex items-center justify-between relative z-50">
+    <nav className="w-full bg-[#1d384e] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-40 py-2 md:py-4 lg:py-2 flex items-center justify-between relative z-50">
       {/* Logo */}
       <Link to="/" className="text-lg sm:text-xl md:text-2xl lg:text-3xl oswald font-extrabold tracking-tight select-none">
         {/* <span className="text-[#c0d4b2]">Sardarji</span>
