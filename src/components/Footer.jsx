@@ -77,7 +77,7 @@ export default function Footer({
               to="/"
               className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight text-white hover:text-[#c0d4b2] transition-colors"
             >
-              <img src={logoImg} alt="Sardarji Logo" className="h-30 w-auto" />
+              <img src={logoImg} alt="Sardarji Logo" className="h-16 w-auto" />
             </Link>
             <p className="text-white/60 text-sm sm:text-base leading-relaxed hidden sm:block">
               {brand.description}

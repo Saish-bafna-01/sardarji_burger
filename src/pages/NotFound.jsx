@@ -9,7 +9,7 @@ const NotFound = () => {
       <Navbar />
 
       {/* 404 Hero Section */}
-      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 overflow-hidden">
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 pt-24 md:pt-28 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-[#c0d4b2] rounded-full blur-3xl animate-pulse" />

@@ -104,7 +104,7 @@ export default function Hero() {
 
   return (
     <section
-      className={`w-full flex items-center px-4 sm:px-6 md:px-12 lg:px-20 xl:px-48 py-16 md:py-24 lg:py-32 overflow-hidden min-h-[400px] md:min-h-[700px] lg:min-h-[680px] transition-all duration-500`}
+      className={`w-full flex items-center px-4 sm:px-6 md:px-12 lg:px-20 xl:px-48 pt-24 md:pt-28 lg:mt-24 pb-16 md:pb-24 lg:pb-32 overflow-hidden min-h-[400px] md:min-h-[700px] lg:min-h-[680px] transition-all duration-500`}
       style={{
         backgroundImage: window.innerWidth >= 1024 ? `url(${slide.image})` : "none",
         backgroundColor: window.innerWidth < 1024 ? slide.bgMobile : "transparent",

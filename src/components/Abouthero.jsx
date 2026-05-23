@@ -5,7 +5,7 @@ export default function AboutHero({
 }) {
   return (
     <section
-      className="relative w-full min-h-[400px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] flex items-center justify-center bg-linear-to-b from-black via-black/60 to-transparent bg-cover bg-center"
+      className="relative w-full min-h-[400px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] flex items-center justify-center bg-linear-to-b from-black via-black/60 to-transparent bg-cover bg-center pt-24 md:pt-28"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* Dark overlay */}

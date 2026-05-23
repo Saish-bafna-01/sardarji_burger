@@ -183,7 +183,7 @@ export default function Checkout() {
     return (
       <div className="min-h-screen bg-[#111111]">
         <Navbar />
-        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+        <div className="max-w-4xl mx-auto px-4 pt-28 pb-20 text-center">
           <FiShoppingBag size={64} className="text-white/20 mx-auto mb-6" />
           <h1 className="text-white text-2xl sm:text-3xl font-bold mb-4">Your cart is empty</h1>
           <p className="text-white/50 mb-8">Add some delicious items to your cart to checkout</p>
@@ -203,7 +203,7 @@ export default function Checkout() {
     return (
       <div className="min-h-screen bg-[#111111]">
         <Navbar />
-        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+        <div className="max-w-4xl mx-auto px-4 pt-28 pb-20 text-center">
           <div className="bg-[#1c1c1c] rounded-2xl p-8 sm:p-12">
             <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <FiCheck size={40} className="text-white" />
@@ -254,7 +254,7 @@ export default function Checkout() {
     <div className="min-h-screen bg-[#111111]">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-8 md:py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-28 pb-8 md:pb-12">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
           <h1 className="text-white oswald text-3xl sm:text-4xl md:text-5xl font-bold uppercase mb-4">

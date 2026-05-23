@@ -40,7 +40,7 @@ const BlogDetail = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] flex items-center justify-center bg-[#111111]">
+      <section className="relative w-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] flex items-center justify-center bg-[#111111] pt-24 md:pt-28">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
